@@ -3,4 +3,9 @@ Repositorio de entrega de Postwork para el Proyecto del Curso de BEDU en Data Sc
 
 
 ## Integrantes del Equipo:
-- @Aranza-Pizano
+*  Dávila Osorio Javier Ibzan
+*  Díaz Lievano Lázaro Raúl
+*  García Ruiz Diana Isabel
+*  Ortega Estrada Ismael
+*  Pizano Ocampo Aranza Nayeli
+*  Sánchez Loperena Ruben
