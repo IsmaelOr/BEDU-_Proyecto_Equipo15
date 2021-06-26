@@ -24,6 +24,22 @@ El término variable marginal se usa para referirse a una variable del subconjun
 El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅𝑿,𝒀(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅𝑿(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
 
 <p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/g_casa.PNG>
+</p>
+              
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/g_visit.PNG">
+</p>
+                                                                                                                               
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
+</p>
+                                                                                                          
+ <p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_visita.PNG">
+</p>                                                                                                         
+                                                                                                                               
+<p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_conjunta%20p3.PNG">
 </p>
 #### 2. Realiza lo siguiente:
