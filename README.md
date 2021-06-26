@@ -18,125 +18,100 @@ Repositorio de entrega de Postwork para el Proyecto del Curso de BEDU en Data Sc
 
 ## Desarrollo del Proyecto
 ### Postwork 1
-#### 1. Importa los datos de soccer de la temporada 2019/2020 de la primera división de la liga española a R, los datos los puedes encontrar en el siguiente enlace: https://www.football-data.co.uk/spainm.php
 
-Importamos el archivo que contiene los datos mediante la función read.csv y guardamos el data frame como soccer19_20 :
-
-```R
-soccer19_20 <- read.csv("https://www.football-data.co.uk/mmz4281/1920/SP1.csv")
-```
-
-A continuación se muestra el data frame obtenido:
-
-```R
-head(soccer19_20)
-```
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Head%20soccer19_20.PNG)
-
-
-#### 2. Del data frame que resulta de importar los datos a R, extrae las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (FTHG) y los goles anotados por los equipos que jugaron como visitante (FTAG)
-
-Esto lo hacemos seleccionando las columnas respectivas para:
-
-Goles anotados por equipos de casa
-
-```R
-G_Casa <- soccer19_20[, "FTHG"]
-```
-
-Y goles anotados por equipos visitantes
-
-```R
-G_Visitante <- soccer19_20[, "FTAG"]
-```
-
-#### 3. Consulta cómo funciona la función table en R al ejecutar en la consola ?table
-
-```R
-?table
-```
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Consulta%20funci%C3%B3n%20table.PNG)
-
-Tal como su nombre lo indica por medio de esta función convertimos los datos seleccionados a una tabla, en este caso utilizamos como argumentos las columnas extraidas y generamos tablas de frecuencias relativas.
-
-Tabla de frecuencias goles de casa
-
-```R
-F_GCasa <- table(G_Casa); 
-F_GCasa
-```
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Tabla%20de%20frecuencias%20goles%20casa.PNG)
-
-Tabla de frecuencias goles de visitante
-
-```R
-F_GVisitante <- table(G_Visitante); 
-F_GVisitante
-``` 
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Tabla%20de%20frecuencias%20goles%20visitante.PNG)
-
-Posteriormente elabora tablas de frecuencias relativas para estimar las siguientes probabilidades:
-
-#### * La probabilidad (marginal) de que el equipo que juega en casa anote X goles (X = 0, 1, 2, ...)
-
-Para obtener la probabilidad marginal utilizamos la funcion prop.table, la cuál nos genera las probabilidades de que los equipos en casa anoten x cantidad de goles de acuerdo a las frecuencias obtenidas anteriormente y la expresamos como porcentaje.                                                                                                     
-
-```R
-P_GCasa <- prop.table(F_GCasa)  
-paste("La probabilidad (%) de que el equipo de casa anote X goles es: ") 
-P_GCasa <- round((P_GCasa * 100), 3); 
-P_GCasa
-```
-
-La probabilidad (%) de que el equipo de casa anote X goles es:
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Probabilidad%20goles%20casa.PNG)
-
-#### * La probabilidad (marginal) de que el equipo que juega como visitante anote Y goles (Y = 0, 1, 2, ...)
-
-Realizamos la misma función del punto anterior ahora para las probabilidades de que los equipos visitantes anoten Y cantidad de goles.
-
-```R
-P_GVisitante <- prop.table(F_GVisitante)                                                                                                                                   
-paste("La probabilidad (%) de que el equipo visitante anote Y goles es: ")                                                                                              
-P_GVisitante <- round((P_GVisitante * 100), 3); 
-P_GVisitante
-```
-
-La probabilidad (%) de que el equipo visitante anote Y goles es:
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Probabilidad%20goles%20visitante.PNG)
-  
-#### * La probabilidad (conjunta) de que el equipo que juega en casa anote X goles y el equipo que juega como visitante anote Y goles (x = 0, 1, 2, ..., y = 0, 1, 2, ...)
-
-En este punto generamos una tabla de frecuencias conjunta, que nos muestra los diferentes casos utilizando como X los goles de los equipos en casa y como Y los goles de los equipos visitantes.
-
-```R
-F_GConj <- table(G_Casa,G_Visitante); 
-F_GConj
-```
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Tabla%20de%20frecuencias%20conjunta.PNG)
-
-Finalmente utilizando la función prop.table generamos la probabilidad conjunta.
-
-```R
-P_Conj <- prop.table(table(G_Casa, G_Visitante))                                                                                                                       
-paste("La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo visitante anote Y goles: ")                                                             
-P_Conj <- round((P_Conj * 100), 3); 
-P_Conj
-```
-
-La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo visitante anote Y goles:
-
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Probabilidad%20conjunta.PNG)
-
-Al obtener esta tabla de probabilidades conjunta podemos posteriormente graficar los datos y analizarlos, siendo de utilidad para con base en ellos determinar cuales son los escenarios más probables y hacer proyecciones a futuro; por ejemplo apuestas, entre otras.
 ### Postwork 2
+Ahora vamos a generar un cúmulo de datos mayor al que se tenía, esta es una situación habitual que se puede presentar para complementar un análisis, siempre es importante estar revisando las características o tipos de datos que tenemos, por si es necesario realizar alguna transformación en las variables y poder hacer operaciones aritméticas si es el caso, además de sólo tener presente algunas de las variables, no siempre se requiere el uso de todas para ciertos procesamientos.
+
+#### 1. Importa los datos de soccer de las temporadas 2017/2018, 2018/2019 y 2019/2020 de la primera división de la liga española a R, los datos los puedes encontrar en el siguiente enlace: https://www.football-data.co.uk/spainm.php
+
+##### Importamos la libreria `dplyr`
+```R
+  library(dplyr)
+```
+##### Almacenamos los `URL` de los dataset de las temporadas de soccer de primera division del 2017 al 2020.
+```R
+  URL_17_18 <- "https://www.football-data.co.uk/mmz4281/1718/SP1.csv"
+  URL_18_19 <- "https://www.football-data.co.uk/mmz4281/1819/SP1.csv"
+  URL_19_20 <- "https://www.football-data.co.uk/mmz4281/1920/SP1.csv"
+```
+##### Escogemos la carpeta donde se guardan los archivos `csv`.
+```R
+  setwd(choose.dir(caption = "Select folder"))
+```
+##### Descargamos los dataset de las temporadas de soccer y les asiganmos un nombre con extencion `csv`.
+```R
+  download.file(url = URL_17_18, destfile = "soccer17_18.csv", mode = "wb")
+  download.file(url = URL_18_19, destfile = "soccer18_19.csv", mode = "wb")
+  download.file(url = URL_19_20, destfile = "soccer19_20.csv", mode = "wb")
+```
+##### Leemos cojuntamente todos los archivos `csv` mediante la funcion `lapply()` y los guardamos en una lista.
+```R
+  SoccerList <- lapply(dir(), read.csv)
+```
+
+#### 2. Revisa la estructura de de los data frames al usar las funciones: `str`, `head`, `View` ó `summary`.
+```R
+  str(SoccerList[[1]]); head(SoccerList[[1]]); View(SoccerList[[1]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList1.PNG?raw=true)
+```R
+  str(SoccerList[[2]]); head(SoccerList[[2]]); View(SoccerList[[2]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList2.PNG?raw=true)
+```R
+  str(SoccerList[[3]]); head(SoccerList[[3]]); View(SoccerList[[3]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList3.PNG?raw=true)
+##### Como se pudo checar en la revision de los dataset cada uno posee casi la misma cantidad de variables y hay algunas que se deben modificar. Hay que convertir la variable Date en una variable de tipo fecha (`as.Date`), mediante la funcion `mutate()` de la libreria de `dplyr`.
+##### Se asigna la codificacion con la que se muestra en el data set por ejemplo si la fecha aparece como 20/03/17 la codificacion debe ser `%d/%m/%y` y para una fecha de este modo 20/03/2017 corresponde la codificacion `%d/%m/%Y`.
+```R
+  SoccerList[[1]] <- mutate(SoccerList[[1]], Date = as.Date(Date, "%d/%m/%y")) 
+  SoccerList[[2]] <- mutate(SoccerList[[2]], Date = as.Date(Date, "%d/%m/%Y"))
+  SoccerList[[3]] <- mutate(SoccerList[[3]], Date = as.Date(Date, "%d/%m/%Y"))
+```
+##### Al verificar de nuevo los datos se confirma que la codificacion y tipo de variable para `Date` son la misma para todos los componentes de la lista.
+```R
+  str(SoccerList[[1]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList1-1.PNG?raw=true)
+```R
+  str(SoccerList[[2]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList2-1.PNG?raw=true)
+```R
+  str(SoccerList[[3]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList3-1.PNG?raw=true)
+#### 3. Con la función `select()` del paquete dplyr selecciona únicamente las columnas `Date`, `HomeTeam`, `AwayTeam`, `FTHG`, `FTAG` y `FTR`; esto para cada uno de los data frames. Mediante la funcion `lapply()` para poder aplicar el selec a todos los componentes de la lista.
+```R
+  SoccerList <- lapply(SoccerList, select, Date, HomeTeam, AwayTeam, FTHG, FTAG, FTR)
+```
+##### Al momento de hacer la verificacion nuevamente se puede observar que los dataframe de la lista ahora solo cuenta con 6 variables.
+```R
+  str(SoccerList[[1]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList1-2.PNG?raw=true)
+```R
+  str(SoccerList[[2]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList2-2.PNG?raw=true)
+```R
+  str(SoccerList[[3]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList3-2.PNG?raw=true)
+#### 4. Asegúrate de que los elementos de las columnas correspondientes de los nuevos data frames sean del mismo tipo. Con ayuda de la función `rbind` forma un único data frame que contenga las seis columnas mencionadas en el punto 3, la función `do.call()` podría ser utilizada
+```R
+  Soccer <- do.call(rbind, SoccerList)
+```
+##### Comprobamos que se hallan juntado todos datos de la lista en un dataframe. Debe aparecer un dataframe con 1140 observaciones y 6 variables.
+```R
+  str(Soccer); View(Soccer)
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/total.PNG?raw=true)
+##### Por ultimo se exporta el dataFrame a un archivo csv
+```R
+  write.csv(Soccer, "Soccer_2017-2020.csv", row.names = FALSE)
+```
 
 ### Postwork 3
 
