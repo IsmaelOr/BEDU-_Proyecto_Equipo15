@@ -18,5 +18,6 @@ Ahora graficaremos probabilidades (estimadas) marginales y conjuntas para el nú
 ##### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 #### 2. Realiza lo siguiente:
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo de casa.
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Rplot.png)
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 ##### * Un HeatMap para las probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
