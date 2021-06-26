@@ -75,6 +75,7 @@ Ahora que tenemos las tablas de frecuencias podemos calcular las probabilidades 
   paste("La probabilidad (%) de que el equipo visitante anote Y goles es: "); P_GVisitante
 ```
 El resultado de `prop.table` se obtiene en decimales por lo que multiplicamos el resultado por 100 y redondeamos a 3 cifras para ver las probabilidades en razón 1:100.
+
 Probabilidad marginal de anotar gol en casa:
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
@@ -82,8 +83,17 @@ Probabilidad marginal de anotar gol en casa:
 Probabilidad marginal de anotar gol de visitante:                                                                                                         
  <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_visita.PNG">
-</p>                                                                                                         
-                                                                                                                               
+</p>   
+
+Para obtener la probabilidad conjunta creamos la tabla de frecuencias de ambos vectores, el de casa y de visitante con `table()` ingresando ambos argumentos y se le genera su tabla de probabilidad a dicha tabla:
+```R 
+# La probabilidad (conjunta) de que el equipo de casa anote X goles y el 
+# equipo que juega como visitante anote Y goles
+  P_Conj <- prop.table(table(G_Casa, G_Visitante))
+  P_Conj <- round((P_Conj * 100), 3)
+  paste("La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo visitante anote Y goles: "); P_Conj
+```
+El resultado de la tabla conjunta es:                                                                                                                               
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_conjunta%20p3.PNG">
 </p>
