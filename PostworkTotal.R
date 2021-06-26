@@ -1,7 +1,7 @@
 
 library(plotly)
 
-install.packages("plotly")
+#install.packages("plotly")
 #  ---------------------------------------------
 # |  Postwork 1      |
 #  ---------------------------------------------
