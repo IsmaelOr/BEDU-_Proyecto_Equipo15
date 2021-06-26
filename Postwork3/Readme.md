@@ -21,7 +21,7 @@ La distribución marginal es la distribución de probabilidad de un subconjunto 
 
 El término variable marginal se usa para referirse a una variable del subconjunto de retenido y cuyos valores pueden ser conocidos. La distribución de las variables marginales, la distribución marginal, se obtiene marginalizando sobre la distribución de variables descartadas y las variables descartadas se llaman a veces variables marginalizadas.
 
-El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅<sup>𝑿,𝒀</sup>(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅𝑿(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
+El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅<sub>𝑿,𝒀</sub>(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅<sub>𝑿</sub>(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
 
 ## Desarrollo de código
 
