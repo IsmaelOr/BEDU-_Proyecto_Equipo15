@@ -23,6 +23,6 @@ Para realizar las gráficas de las probabilidades marginales, primero estas se a
 Local <- as.data.frame(P_GCasa)
 colnames(Local) <- c("Goles","Probabilidad"); Local
 ```
-![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.1.jpg)
+![alt text]<center>(https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.1.jpg)</center>
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 ##### * Un HeatMap para las probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
