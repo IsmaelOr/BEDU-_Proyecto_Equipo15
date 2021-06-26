@@ -40,8 +40,10 @@ colnames(Visit) <- c("Goles","Probabilidad"); Visit
 Por último, de igual manera se hace un dataframe con las probabilidades conjuntas tanto de los goles del equipo de casa como de los goles del equipo visitante. Se renombran las columnas para tener: "Goles_Local", "Goles_Visit" y "Probabilidad".
 
 ```R
-a
+Conj <- as.data.frame(P_Conj)
+colnames(Conj) <- c("Goles_Local", "Goles_Visit","Probabilidad"); Conj
 ```
+
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.3.jpg">
 </p>
