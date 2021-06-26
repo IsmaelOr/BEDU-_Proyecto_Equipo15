@@ -35,12 +35,14 @@ Goles anotados por equipos de casa
 ```R
 G_Casa <- soccer19_20[, "FTHG"]
 ```
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Goles%20casa.PNG)
 
 Y goles anotados por equipos visitantes
 
 ```R
 G_Visitante <- soccer19_20[, "FTAG"]
 ```
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork1/Goles%20visitante.PNG)
 
 #### 3. Consulta cómo funciona la función table en R al ejecutar en la consola ?table
 
@@ -128,4 +130,4 @@ La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo v
 
 Al obtener esta tabla de probabilidades conjunta podemos posteriormente graficar los datos y analizarlos, siendo de utilidad para con base en ellos determinar cuales son los escenarios más probables y hacer proyecciones a futuro; por ejemplo apuestas, entre otras.
 
-##### Nota.Para más información y ejemplos sobre las funciones table y prop.table se puede consultar la siguiente liga: https://fhernanb.github.io/Manual-de-R/tablas.html
+##### Nota. Para más información y ejemplos sobre las funciones table y prop.table se puede consultar la siguiente liga: https://fhernanb.github.io/Manual-de-R/tablas.html
