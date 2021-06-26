@@ -46,6 +46,7 @@ De la misma manera se despliegan los goles de visitante
 </p>
 
 Una tabla de frecuencias es una herramienta que permite ordenar los datos de manera que se presentan numéricamente las características de la distribución de un conjunto de datos.
+
 G_casa y G_visitante son vectores por lo que para generar sus tablas de frecuencia se usa el comando `table` y se guarda la tabla en nuevas variables 
 ```R
 # Se realiza las tablas de frecuencia para obtener las sig probabilidades
@@ -61,11 +62,24 @@ La tabla obtenida para los goles de visita es:
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/frec_visitante.PNG">
 </p> 
 
+Ahora que tenemos las tablas de frecuencias podemos calcular las probabilidades marginales haciendo uso de la función `prop.table` que expresa las entradas de la tabla como fracción de una tabla marginal
+```R
+# La probabilidad (marginal) de que el equipo de casa anote X goles
+  P_GCasa <- prop.table(F_GCasa)
+  P_GCasa <- round((P_GCasa * 100), 3)
+  paste("La probabilidad (%) de que el equipo de casa anote X goles es: "); P_GCasa
 
+# La probabilidad (marginal) de que el equipo de visitante anote Y goles
+  P_GVisitante <- prop.table(F_GVisitante)
+  P_GVisitante <- round((P_GVisitante * 100), 3)
+  paste("La probabilidad (%) de que el equipo visitante anote Y goles es: "); P_GVisitante
+```
+El resultado de `prop.table` se obtiene en decimales por lo que multiplicamos el resultado por 100 y redondeamos a 3 cifras para ver las probabilidades en razón 1:100.
+Probabilidad marginal de anotar gol en casa:
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
 </p>
-                                                                                                          
+Probabilidad marginal de anotar gol de visitante:                                                                                                         
  <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_visita.PNG">
 </p>                                                                                                         
