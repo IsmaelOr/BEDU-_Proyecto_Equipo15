@@ -13,12 +13,12 @@ Ahora investigarás la dependencia o independencia del número de goles anotados
 
 Del postwork 3 
 
-Primero cremos una nueva columna con la misma longitud que el dataframe Conj.
+Primero creamos una nueva columna de ceros con la misma longitud que el dataframe Conj, el cual contiene la informacion de goles como local, goles como visitante y la probabilidad conjunta.
 ```R
 Conj[, 4] = rep(0, length(Conj[,1]))
 ```
-Luego llenamos esta columna con el producto de las probabilidades marginales de obtener X goles como local y Y goles como visitante.
-Asi que empleamos un ciclo anidado tal que para cada elemento de Conj (conjunto de goles local y visitante) cheque si el numero de goles en la columna local y visit de Conj coincide con los que hay en la tabla visit y local, y si lo satisface, que multiplique sus probabilidades marginales y los guarde en su lugar correspondiente dentro de la columna 4 de Conj. 
+Luego llenamos esta columna con el producto de las probabilidades marginales de obtener X goles como local y Y goles como visitante. Por ejemplo, el producto de las probabilidades marginales de obtener 0 goles como local y 0, 1, 2, 3, 4, 5 o 6 goles como visitante.
+Para esto empleamos un ciclo anidado tal que para cada elemento de Conj (conjunto de goles local y visitante) cheque si el numero de goles en la columna local y visit de Conj coincide con los que hay en la tabla visit y local, y si lo satisface, que multiplique sus probabilidades marginales y los guarde en su lugar correspondiente dentro de la columna 4 de Conj. 
 ```R
 for(i in 1:length(Conj[,1])){
     for (j in 1:length(Local$Goles)) {
@@ -30,6 +30,8 @@ for(i in 1:length(Conj[,1])){
     }
   }
 ```
+Obtenemos lo siguiente: 
+![alt_text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/tabla_conj_prod_marg.png)
 Renombramos esta columna llamada V4 como "Prod_Marg" y dividimos entre 100 dado que nosotros mostramos las probabilidades marginales individuales como porcentajes.
 ```R
   Conj <- rename(Conj, Prod_Marg = V4)
@@ -39,6 +41,7 @@ y por ultimo definimos la columna cociente como la division entre la probabilida
 ```R
   Conj[, "Cociente"] <- Conj$Probabilidad/Conj$Prod_Marg
 ```
+![alt_text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/tabla_conj_cociente.png)
 
 
 
