@@ -26,6 +26,6 @@ plot(x, y, type = "l", xlab = "", ylab = "")
 title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == 175, " y ", sigma == 6)))
 abline(v = 175, lwd = 2, lty = 2) # La media es 175 
 ```
-![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Rplot.png)
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/Rplot.png)
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 ##### * Un HeatMap para las probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
