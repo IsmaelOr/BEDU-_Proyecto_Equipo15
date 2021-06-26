@@ -31,8 +31,11 @@ for(i in 1:length(Conj[,1])){
   }
 ```
 Obtenemos lo siguiente: 
+
 ![alt_text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/tabla_conj_prod_marg.png)
-Renombramos esta columna llamada V4 como "Prod_Marg" y dividimos entre 100 dado que nosotros mostramos las probabilidades marginales individuales como porcentajes.
+
+
+Renombramos esta columna llamada V4 como "Prod_Marg" y dividimos entre 100 dado que nosotros mostramos las probabilidades marginales individuales como porcentajes, de esta forma el producto de las probabilidades nos quedaría como porcentaje también.
 ```R
   Conj <- rename(Conj, Prod_Marg = V4)
   Conj[,"Prod_Marg"] <- Conj[,"Prod_Marg"] / 100
@@ -41,6 +44,8 @@ y por ultimo definimos la columna cociente como la division entre la probabilida
 ```R
   Conj[, "Cociente"] <- Conj$Probabilidad/Conj$Prod_Marg
 ```
+
+
 ![alt_text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/tabla_conj_cociente.png)
 
 
