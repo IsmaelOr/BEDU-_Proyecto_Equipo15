@@ -23,7 +23,7 @@ El término variable marginal se usa para referirse a una variable del subconjun
 
 El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅𝑿,𝒀(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅𝑿(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
 
-###Desarrollo de código
+## Desarrollo de código
 
 Para este postwork comenzamos por llamar a la libreria ggplot2 que se requiere en el segundo inciso
 ```R
@@ -44,7 +44,24 @@ De la misma manera se despliegan los goles de visitante
  <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/g_visit.PNG">
 </p>
-                                                                                                                               
+
+Una tabla de frecuencias es una herramienta que permite ordenar los datos de manera que se presentan numéricamente las características de la distribución de un conjunto de datos.
+G_casa y G_visitante son vectores por lo que para generar sus tablas de frecuencia se usa el comando `table` y se guarda la tabla en nuevas variables 
+```R
+# Se realiza las tablas de frecuencia para obtener las sig probabilidades
+  F_GCasa <- table(G_Casa); F_GCasa                  # T.Frec. goles de casa
+  F_GVisitante <- table(G_Visitante); F_GVisitante   # T.Frec. goles visitantes
+```
+La tabla obtenida para los goles en casa es:
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/frec_casa.PNG">
+</p>
+La tabla obtenida para los goles de visita es:
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/frec_visitante.PNG">
+</p> 
+
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
 </p>
