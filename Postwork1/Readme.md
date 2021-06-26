@@ -128,4 +128,4 @@ La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo v
 
 Al obtener esta tabla de probabilidades conjunta podemos posteriormente graficar los datos y analizarlos, siendo de utilidad para con base en ellos determinar cuales son los escenarios más probables y hacer proyecciones a futuro; por ejemplo apuestas, entre otras.
 
-#####Nota.Para más información y ejemplos sobre las funciones table y prop.table se puede consultar la siguiente liga: https://fhernanb.github.io/Manual-de-R/tablas.html
+##### Nota.Para más información y ejemplos sobre las funciones table y prop.table se puede consultar la siguiente liga: https://fhernanb.github.io/Manual-de-R/tablas.html
