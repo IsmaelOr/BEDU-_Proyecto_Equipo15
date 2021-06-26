@@ -19,14 +19,17 @@ Ahora graficaremos probabilidades (estimadas) marginales y conjuntas para el nú
 #### 2. Realiza lo siguiente:
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo de casa.
 Para realizar las gráficas de las probabilidades marginales, primero estas se almacenan en un dataframe. Se renombran las columnas para tener: "Goles" y "Probabilidad".
+
 ```R
 Local <- as.data.frame(P_GCasa)
 colnames(Local) <- c("Goles","Probabilidad"); Local
 ```
+
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.1.jpg">
 </p>
 Una vez hecho esto, se utiliza el paquete de "ggplot2" para graficar nuestro gráfico de barras. A su vez, hacemos uso del paquete "plotly" que nos servirá para hacer a nuestro gráfico de barras más dinámico.
+
 ```R
 GL <- ggplot(Local, aes(x = Goles, y = Probabilidad)) + 
     geom_col(colour = "black", fill= "yellow") +
@@ -38,6 +41,7 @@ GL <- ggplot(Local, aes(x = Goles, y = Probabilidad)) +
 
 ggplotly(GL)
 ```
+
 Podemos observar el siguiente gráfico:
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.4.png">
