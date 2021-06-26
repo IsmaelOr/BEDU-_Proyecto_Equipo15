@@ -16,7 +16,8 @@ Primero creamos una nueva columna de ceros con la misma longitud que el datafram
 Conj[, 4] = rep(0, length(Conj[,1]))
 ```
 Luego llenamos esta columna con el producto de las probabilidades marginales de obtener X goles como local y Y goles como visitante. Por ejemplo, los productos de las probabilidades marginales de obtener 0 goles como visitante y 0, 1, 2, 3, 4, 5 o 6 goles como local.
-Así, queremos estudiar si se cumple que la probabilidad conjunta sea igual al producto de las probabilidades marginales, es decir, si    $f(x,y)=f(x)*f(y).$
+Así, queremos estudiar si se cumple que la probabilidad conjunta sea igual al producto de las probabilidades marginales, es decir, si    
+- <img src="https://latex.codecogs.com/gif.latex?f(x,y)=f(x)*f(y). " /> 
 
 Para esto empleamos un ciclo anidado tal que para cada elemento de Conj (conjunto de goles local y visitante) cheque si el numero de goles en la columna local y visit de Conj coincide con los que hay en la tabla visit y local, y si lo satisface, que multiplique sus probabilidades marginales y los guarde en su lugar correspondiente dentro de la columna 4 de Conj. 
 ```R
