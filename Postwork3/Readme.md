@@ -48,10 +48,12 @@ Podemos observar el siguiente gráfico:
 </p>
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 De igual manera de como hicimos antes, primero, estas probabilidades se almacenan en un dataframe. Se renombran las columnas para tener: "Goles" y "Probabilidad".
+
 ```R
 Visit <- as.data.frame(P_GVisitante)
 colnames(Visit) <- c("Goles","Probabilidad"); Visit
 ```
+
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.2.jpg">
 </p>
