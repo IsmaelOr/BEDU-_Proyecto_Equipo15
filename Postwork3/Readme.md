@@ -39,8 +39,6 @@ colnames(Visit) <- c("Goles","Probabilidad"); Visit
 ##### * Un HeatMap para las probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
 Por último, de igual manera se hace un dataframe con las probabilidades conjuntas tanto de los goles del equipo de casa como de los goles del equipo visitante. Se renombran las columnas para tener: "Goles_Local", "Goles_Visit" y "Probabilidad".
 ```R
-Conj <- as.data.frame(P_Conj)
-colnames(Conj) <- c("Goles_Local", "Goles_Visit","Probabilidad")
 ```
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.3.jpg">
