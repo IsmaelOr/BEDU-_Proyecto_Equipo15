@@ -120,3 +120,7 @@ t.test(Medias, alternative = "two.sided", mu = 1)
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
 
 Dado que nos resulto 0.858 podemos rechazar nuestra Hipótesis nula sobre que nuestras variables son independientes y aceptar la Hipótesis alternativa sobre que nuestras variables son Dependientes.
+
+##### Nota.Para más información y ejemplos sobre las funciones empleadas se puede consultar las siguientes ligas:
+* https://biocosas.github.io/R/100_bootstrap.html
+* https://tereom.github.io/est-computacional-2018/bootstrap-en-r.html
