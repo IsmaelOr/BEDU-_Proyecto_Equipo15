@@ -11,6 +11,9 @@ El siguiente postwork, te servirá para ir desarrollando habilidades como si se 
 
 #### 1. Importa los datos de soccer de la temporada 2019/2020 de la primera división de la liga española a R, los datos los puedes encontrar en el siguiente enlace: https://www.football-data.co.uk/spainm.php
 
+Descargamos el archivo que contiene los datos mediante la función read.csv:
+soccer19_20 <- read.csv("https://www.football-data.co.uk/mmz4281/1920/SP1.csv")
+
 
 #### 2. Del data frame que resulta de importar los datos a R, extrae las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (FTHG) y los goles anotados por los equipos que jugaron como visitante (FTAG)
 
