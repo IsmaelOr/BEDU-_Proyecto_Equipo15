@@ -88,3 +88,19 @@ colnames(Conj) <- c("Goles_Local", "Goles_Visit","Probabilidad"); Conj
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.3.jpg">
 </p>
+Para finalizar, hacemos uso de la función "geom_tile()" dentro del paquete "ggplot2" para poder graficar un HeatMap de las probabilidades conjuntas entre los números de goles que anotan el equipo de casa (representado por el eje X) y el equipo visitante en un partido (representado por el eje Y).
+
+```R
+G_Conj <- ggplot(Conj, aes(x = Goles_Local, y = Goles_Visit, fill = Probabilidad)) + 
+    geom_tile() +
+    scale_fill_gradientn(colours = colorspace::heat_hcl(7)) +
+    ggtitle("Mapa de calor de la probabilidad conjunta", subtitle = 'Pendiente') +
+    labs(x = "Goles locales", y = "Goles visitantes", fill = "Probabilidad %") +
+    theme(text = element_text(size = 15, face = "bold"))
+  
+ggplotly(G_Conj)
+```
+
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.6.png">
+</p>
