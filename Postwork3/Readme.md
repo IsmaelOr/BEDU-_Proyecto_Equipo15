@@ -13,17 +13,13 @@
 Ahora graficaremos probabilidades (estimadas) marginales y conjuntas para el número de goles que anotan en un partido el equipo de casa o el equipo visitante.
 
 #### 1. Con el último data frame obtenido en el postwork de la sesión 2, elabora tablas de frecuencias relativas para estimar las siguientes probabilidades:
-##### * La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
-##### * La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
-##### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
-
 La distribución marginal es la distribución de probabilidad de un subconjunto de variables aleatorias de un conjunto de variables aleatorias, así la probabilidad marginal permite obtener probabilidades totales, como veremos en el tercer punto de este inciso.
 
 El término variable marginal se usa para referirse a una variable del subconjunto de retenido y cuyos valores pueden ser conocidos. La distribución de las variables marginales, la distribución marginal, se obtiene marginalizando sobre la distribución de variables descartadas y las variables descartadas se llaman a veces variables marginalizadas.
 
 El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅<sub>𝑿,𝒀</sub>(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅<sub>𝑿</sub>(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
 
-## Desarrollo de código
+#### Desarrollo de código
 
 Para este postwork comenzamos por llamar a la libreria ggplot2 que se requiere en el segundo inciso
 ```R
@@ -63,27 +59,34 @@ La tabla obtenida para los goles de visita es:
 </p> 
 
 Ahora que tenemos las tablas de frecuencias podemos calcular las probabilidades marginales haciendo uso de la función `prop.table` que expresa las entradas de la tabla como fracción de una tabla marginal
+
+##### * La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
 ```R
 # La probabilidad (marginal) de que el equipo de casa anote X goles
   P_GCasa <- prop.table(F_GCasa)
   P_GCasa <- round((P_GCasa * 100), 3)
   paste("La probabilidad (%) de que el equipo de casa anote X goles es: "); P_GCasa
+```
+El resultado de `prop.table` se obtiene en decimales por lo que multiplicamos el resultado por 100 y redondeamos a 3 cifras para ver las probabilidades en razón 1:100.
+Probabilidad marginal de anotar gol en casa:
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
+</p>
+##### * La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
 
+```R
 # La probabilidad (marginal) de que el equipo de visitante anote Y goles
   P_GVisitante <- prop.table(F_GVisitante)
   P_GVisitante <- round((P_GVisitante * 100), 3)
   paste("La probabilidad (%) de que el equipo visitante anote Y goles es: "); P_GVisitante
 ```
-El resultado de `prop.table` se obtiene en decimales por lo que multiplicamos el resultado por 100 y redondeamos a 3 cifras para ver las probabilidades en razón 1:100.
 
-Probabilidad marginal de anotar gol en casa:
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
-</p>
+El resultado de `prop.table` se obtiene en decimales por lo que multiplicamos el resultado por 100 y redondeamos a 3 cifras para ver las probabilidades en razón 1:100.
 Probabilidad marginal de anotar gol de visitante:                                                                                                         
  <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_visita.PNG">
 </p>   
+##### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 
 Para obtener la probabilidad conjunta creamos la tabla de frecuencias de ambos vectores, el de casa y de visitante con `table()` ingresando ambos argumentos y se le genera su tabla de probabilidad a dicha tabla:
 ```R 
