@@ -90,7 +90,7 @@ Graph <- ggplot() +
 Graph
 ggplotly(Graph)
 ```
-
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/Graph.png)
 
 
 ```R
