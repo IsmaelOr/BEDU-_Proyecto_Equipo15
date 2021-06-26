@@ -532,7 +532,8 @@ t.test(Medias, alternative = "two.sided", mu = 1)
 ```
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
 
-Dado que nos resulto el p-value= 2.2e-16 y esto es menor a 1 podemos rechazar nuestra Hipótesis nula sobre que nuestras variables son independientes y aceptar la Hipótesis alternativa sobre que nuestras variables Goles de Local y Goles de Visita son <strong>Dependientes.</strong>
+Dado que nos resulto el p-value= 2.2e-16 y esto es menor a 1 podemos rechazar nuestra Hipótesis nula sobre que nuestras variables son independientes y aceptar la Hipótesis alternativa sobre que nuestras variables Goles de Local y Goles de Visita son <strong>Dependientes.</strong> <br/>
+De igual forma desde la gráfica obtenida se puede observar que nuestras variables son Dependientes ya que la linea de media gráficada no se encuentra en 1, por lo que confirmamos que nuestro resultado esta correcto.
 ### Postwork 5
 
 ### Postwork 6
