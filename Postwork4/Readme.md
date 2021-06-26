@@ -52,23 +52,36 @@ y por ultimo definimos la columna cociente como la division entre la probabilida
 
 
 
-#### 2. Mediante un procedimiento de boostrap, obtén más cocientes similares a los obtenidos en la tabla del punto anterior. Esto para tener una idea de las distribuciones de la cual vienen los cocientes en la tabla anterior. Menciona en cuáles casos le parece razonable suponer que los cocientes de la tabla en el punto 1, son iguales a 1 (en tal caso tendríamos independencia de las variables aleatorias X y Y).
+#### 2. Mediante un procedimiento de bootstrap, obtén más cocientes similares a los obtenidos en la tabla del punto anterior. Esto para tener una idea de las distribuciones de la cual vienen los cocientes en la tabla anterior. Menciona en cuáles casos le parece razonable suponer que los cocientes de la tabla en el punto 1, son iguales a 1 (en tal caso tendríamos independencia de las variables aleatorias X y Y).
+##### ¿Qué es Bootstrap?
+En lugar de tomar muchas muestras de una población, podemos obtener réplicas (muestras con reemplazamiento) de la muestra original. Todas las réplicas deben tener el mismo tamaño que la muestra original: n.
 
+La distribución bootstrap del estadístico se obtiene a partir de estas muestras y sirve para estimar la distribución del estadístico.
 
+Dado que se nos pide utilizar un procedimiento de bootstrap, investigamos la forma en que este se podía implementar y optamos por utilizar la siguiente libreria llamada "rsample" la cuál contine un función bootstraps( ) que nos regresa un arreglo cuadrangular que incluye una columna con las muestras bootstrap y un identificador del número y tipo de muestra.
+
+Empecemos por cargar nuestra libreria con library(rsample); NOTA: Recuerda que tenemos que instalar previamente la libreria.
+Y creando una semilla aleatoria para que obtengamos los mismo resultados después, y declarando una constante n que representará el número de muestras que generaremos.
 
 ```R
 library(rsample)
   set.seed(1111)
-  n = 1000
+  n = 10000
 ```
 
-
+Ahora guardemos en una variable "muestras" nuestras muestras generadas por la función bootstrap que como podremos ver se le pasan como parámetros nuestro dataframe que representa nuestra muestra original y el parámetro n que representa nuestr número de muestras que queremos generar.
 
 ```R
 muestras <- bootstraps(Conj, times = n)
 ```
 
+En la variable muestras como bien mencionamos en la explicación de arriba estará compuestá por dos columnas la primera con las muestras y la segunda por un identificador, las muestras se guardan en splits de la siguiente forma:
+Ejecutemos un head(muestras) para observar como se estan guardando:
+```R
+head(muestras)
+```
 
+Ahora bien tenemos que sacar la media de cada una de nuestras muestras e irlas almacenando para después gráficarlas por lo que generaremos un vector para ahí irlas guardando, nosotros utilizamos un ciclo para ir recorriendo cada una de nuestras muestras e ir obteniendo la media de cada una de ellas, por lo que para sacar del split cada una de las muestras utilizamos as.data.frame como solución.
 
 ```R
   Medias <- c()
@@ -77,9 +90,12 @@ muestras <- bootstraps(Conj, times = n)
     Medias[i] <- mean(Muest_Prueba$Cociente)
   }
 ```
-
-
-
+De igual forma realicemos un head a medias para ver cuales son nuestros resultados y un summary para ver nuestro max y min.
+```R
+head(Medias)
+summary(Medias)
+```
+Como podemos ver todo va a la perfección, ya solo nos queda ver gráficamente como se ven nuestras medias en un histograma, así que gráficando nuestro vector de Medias.
 
 ```R
 Graph <- ggplot() + 
@@ -92,8 +108,14 @@ ggplotly(Graph)
 ```
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/Graph.png)
 
+Podemos observar que tenemos una distribución normal para nuestro gráfico con el vector de Medias, dado que se puede apreciar la forma de una Camapana de Gauss. 
 
+Para la parte de nuestra hipótesis dada sobre decidir si nuestras Medias obtenidas son independientes o dependientes se propuso de la siguiente forma:
+H<sub>0</sub>: μ = 1 (Las variables son Independientes) vs H<sub>a</sub>: μ ≠  1  (Las variables son Dependientes)
+Empleamos la función t.test para comprobar la hipótesis y estos fueron los resultados
 ```R
 t.test(Medias, alternative = "two.sided", mu = 1)
 ```
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
+
+Dado que nos resulto 0.858 podemos rechazar nuestra Hipótesis nula sobre que nuestras variables son independientes y aceptar la Hipótesis alternativa sobre que nuestras variables son Dependientes.
