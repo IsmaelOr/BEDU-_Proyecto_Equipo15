@@ -17,6 +17,7 @@ Repositorio de entrega de Postwork para el Proyecto del Curso de BEDU en Data Sc
 - [Postwork_4](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork4)
 
 ## :soccer: Desarrollo del Proyecto
+#### Se hara un analisis estadistico de un dataset de los juegos de soccer de la primera divison española de las temporadas que comprende 2017-2020, enfocandonos en los goles anotados en los partidos de los equipos Locales y Visitantes.
 
 ### Postwork 1
 El siguiente postwork, te servirá para ir desarrollando habilidades como si se tratara de un proyecto que evidencie el progreso del aprendizaje durante el módulo, sesión a sesión se irá desarrollando. A continuación aparecen una serie de objetivos que deberás cumplir, es un ejemplo real de aplicación y tiene que ver con datos referentes a equipos de la liga española de fútbol (recuerda que los datos provienen siempre de diversas naturalezas), en este caso se cuenta con muchos datos que se pueden aprovechar, explotarlos y generar análisis interesantes que se pueden aplicar a otras áreas. Siendo así damos paso a las instrucciones:
