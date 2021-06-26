@@ -18,6 +18,14 @@ Ahora graficaremos probabilidades (estimadas) marginales y conjuntas para el nú
 ##### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 #### 2. Realiza lo siguiente:
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo de casa.
+```R
+x <- seq(-4, 4, 0.01)*6 + 175 # Algunos posibles valores que puede tomar la v.a. X (mínimo: mu-4sigma, máximo: mu+4sigma)
+y <- dnorm(x, mean = 175, sd = 6) # Valores correspondientes de la función de densidad de probabilidad
+
+plot(x, y, type = "l", xlab = "", ylab = "")
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == 175, " y ", sigma == 6)))
+abline(v = 175, lwd = 2, lty = 2) # La media es 175 
+```
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Rplot.png)
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 ##### * Un HeatMap para las probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
