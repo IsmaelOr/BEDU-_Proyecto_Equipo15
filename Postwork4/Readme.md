@@ -101,9 +101,9 @@ Como podemos ver todo va a la perfección, ya solo nos queda ver gráficamente c
 ```R
 Graph <- ggplot() + 
           geom_histogram(aes(Medias), bins = 50, col="black", fill = "yellow") + 
-          geom_density(aes(y = 3*..count..)) +
           geom_vline(aes(xintercept = mean(Medias)), linetype = "dashed", color = "red") +
-          ggtitle('Histograma de la distribución de las medias muestrales.')
+          ggtitle('Histograma de la distribución de las medias muestrales.')+
+          ylab("Frecuencias")
 Graph
 ggplotly(Graph)
 ```
