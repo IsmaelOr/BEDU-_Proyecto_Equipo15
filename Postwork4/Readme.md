@@ -96,3 +96,4 @@ ggplotly(Graph)
 ```R
 t.test(Medias, alternative = "two.sided", mu = 1)
 ```
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
