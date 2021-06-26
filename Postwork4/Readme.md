@@ -11,8 +11,6 @@ Ahora investigarás la dependencia o independencia del número de goles anotados
 
 #### 1. Ya hemos estimado las probabilidades conjuntas de que el equipo de casa anote X=x goles (x=0,1,... ,8), y el equipo visitante anote Y=y goles (y=0,1,... ,6), en un partido. Obtén una tabla de cocientes al dividir estas probabilidades conjuntas por el producto de las probabilidades marginales correspondientes.
 
-Del postwork 3 
-
 Primero creamos una nueva columna de ceros con la misma longitud que el dataframe Conj, el cual contiene la informacion de goles como local, goles como visitante y la probabilidad conjunta.
 ```R
 Conj[, 4] = rep(0, length(Conj[,1]))
