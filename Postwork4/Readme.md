@@ -30,8 +30,10 @@ for(i in 1:length(Conj[,1])){
     }
   }
 ```
-Obtenemos lo siguiente: 
 
+```R
+head(Conj)
+```
 ![alt_text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/tabla_conj_prod_marg.png)
 
 
@@ -51,3 +53,46 @@ y por ultimo definimos la columna cociente como la division entre la probabilida
 
 
 #### 2. Mediante un procedimiento de boostrap, obtén más cocientes similares a los obtenidos en la tabla del punto anterior. Esto para tener una idea de las distribuciones de la cual vienen los cocientes en la tabla anterior. Menciona en cuáles casos le parece razonable suponer que los cocientes de la tabla en el punto 1, son iguales a 1 (en tal caso tendríamos independencia de las variables aleatorias X y Y).
+
+
+
+```R
+library(rsample)
+  set.seed(1111)
+  n = 1000
+```
+
+
+
+```R
+muestras <- bootstraps(Conj, times = n)
+```
+
+
+
+```R
+  Medias <- c()
+  for (i in 1:n) {
+    Muest_Prueba <- as.data.frame(muestras$splits[[i]])
+    Medias[i] <- mean(Muest_Prueba$Cociente)
+  }
+```
+
+
+
+
+```R
+Graph <- ggplot() + 
+          geom_histogram(aes(Medias), bins = 50, col="black", fill = "yellow") + 
+          geom_density(aes(y = 3*..count..)) +
+          geom_vline(aes(xintercept = mean(Medias)), linetype = "dashed", color = "red") +
+          ggtitle('Histograma de la distribución de las medias muestrales.')
+Graph
+ggplotly(Graph)
+```
+
+
+
+```R
+t.test(Medias, alternative = "two.sided", mu = 1)
+```
