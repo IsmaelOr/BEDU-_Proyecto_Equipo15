@@ -53,7 +53,7 @@ install.packages("plotly")
 
 
 #  ---------------------------------------------
-# | Postwork 2 - Rubén Sánchez Loperena         |
+# | Postwork 2        |
 #  ---------------------------------------------
   
 library(dplyr)
@@ -114,7 +114,7 @@ library(dplyr)
 
 
 #  ---------------------------------------------
-# |  Postwork 3 - Rubén Sánchez Loperena        |
+# |  Postwork 3       |
 #  ---------------------------------------------
   library(ggplot2)
 
@@ -195,7 +195,7 @@ library(dplyr)
   ggplotly(G_Conj)
 
 #  ---------------------------------------------
-# |  Postwork 4 - Rubén Sánchez Loperena        |
+# |  Postwork 4       |
 #  ---------------------------------------------
   
 # Ahora investigarás la dependencia o independencia del número de goles anotados por el 
@@ -266,6 +266,5 @@ Graph <- ggplot() +
 
 Graph
 
-  ggplotly()
 
 t.test(Medias, alternative = "two.sided", mu = 1)
