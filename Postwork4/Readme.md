@@ -67,13 +67,13 @@ library(rsample)
   n = 10000
 ```
 
-Ahora guardemos en una variable "muestras" nuestras muestras generadas por la función bootstrap que como podremos ver se le pasan como parámetros nuestro dataframe que representa nuestra muestra original y el parámetro n que representa nuestr número de muestras que queremos generar.
+Ahora guardemos en una variable "muestras" nuestras muestras generadas por la función bootstrap que como podremos ver se le pasan como parámetros nuestro dataframe que representa nuestra muestra original y el parámetro n que representa nuestro número de muestras que queremos generar.
 
 ```R
 muestras <- bootstraps(Conj, times = n)
 ```
 
-En la variable muestras como bien mencionamos en la explicación de arriba estará compuestá por dos columnas la primera con las muestras y la segunda por un identificador, las muestras se guardan en splits de la siguiente forma:
+En la variable muestras como bien mencionamos en la explicación de arriba estará compuesta por dos columnas, la primera con las muestras y la segunda por un identificador, las muestras se guardan en splits de la siguiente forma:
 Ejecutemos un head(muestras) para observar como se estan guardando:
 ```R
 head(muestras)
@@ -107,7 +107,7 @@ ggplotly(Graph)
 ```
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/Graph.png)
 
-Podemos observar que tenemos una distribución normal para nuestro gráfico con el vector de Medias, dado que se puede apreciar la forma de una Camapana de Gauss. 
+Podemos observar que tenemos una distribución normal para nuestro gráfico con el vector de Medias, dado que se puede apreciar la forma de una Campana de Gauss. 
 
 Para la parte de nuestra hipótesis dada sobre decidir si nuestras Medias obtenidas son independientes o dependientes se propuso de la siguiente forma: <br/>
 H<sub>0</sub>: μ = 1 (Las variables son Independientes) vs H<sub>a</sub>: μ ≠  1  (Las variables son Dependientes) <br/>
