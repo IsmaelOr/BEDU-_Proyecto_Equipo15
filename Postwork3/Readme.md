@@ -38,11 +38,11 @@ Para obtener la probabilidad marginal de que los equipos anoten goles ya sea jug
 ```
 Donde los resultados de goles casa son los siguientes
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/g_casa.PNG">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/GCasa.PNG">
 </p>
 De la misma manera se despliegan los goles de visitante            
  <p align = "center">
-  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/g_visit.PNG">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/GVisitante.PNG">
 </p>
 
 Una tabla de frecuencias es una herramienta que permite ordenar los datos de manera que se presentan numéricamente las características de la distribución de un conjunto de datos.
