@@ -60,7 +60,7 @@ La tabla obtenida para los goles de visita es:
 
 Ahora que tenemos las tablas de frecuencias podemos calcular las probabilidades marginales haciendo uso de la función `prop.table` que expresa las entradas de la tabla como fracción de una tabla marginal
 
-##### * La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
+#####  * La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
 ```R
 # La probabilidad (marginal) de que el equipo de casa anote X goles
   P_GCasa <- prop.table(F_GCasa)
@@ -72,7 +72,8 @@ Probabilidad marginal de anotar gol en casa:
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_casa.PNG">
 </p>
-##### * La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
+
+#####  * La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
 
 ```R
 # La probabilidad (marginal) de que el equipo de visitante anote Y goles
@@ -86,7 +87,8 @@ Probabilidad marginal de anotar gol de visitante:
  <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_visita.PNG">
 </p>   
-##### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
+
+#####  * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 
 Para obtener la probabilidad conjunta creamos la tabla de frecuencias de ambos vectores, el de casa y de visitante con `table()` ingresando ambos argumentos y se le genera su tabla de probabilidad a dicha tabla:
 ```R 
