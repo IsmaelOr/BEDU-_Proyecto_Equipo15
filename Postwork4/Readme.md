@@ -36,7 +36,7 @@ Renombramos esta columna llamada V4 como "Prod_Marg" y dividimos entre 100 dado 
   Conj[,"Prod_Marg"] <- Conj[,"Prod_Marg"] / 100
 ```
 y por ultimo definimos la columna cociente como la division entre la probabilidad conjunta y el producto de las probabilidades marginales  
-``R
+```R
   Conj[, "Cociente"] <- Conj$Probabilidad/Conj$Prod_Marg
 ```
 
