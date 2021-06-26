@@ -11,16 +11,72 @@ El siguiente postwork, te servirá para ir desarrollando habilidades como si se 
 
 #### 1. Importa los datos de soccer de la temporada 2019/2020 de la primera división de la liga española a R, los datos los puedes encontrar en el siguiente enlace: https://www.football-data.co.uk/spainm.php
 
-Descargamos el archivo que contiene los datos mediante la función read.csv:
+Importamos el archivo que contiene los datos mediante la función read.csv y guardamos el data frame como soccer19_20 :
+
 ```soccer19_20 <- read.csv("https://www.football-data.co.uk/mmz4281/1920/SP1.csv")```
+
+A continuación se muestra el data frame obtenido:
+
+```head(soccer19_20)```
+
+
 
 
 #### 2. Del data frame que resulta de importar los datos a R, extrae las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (FTHG) y los goles anotados por los equipos que jugaron como visitante (FTAG)
 
+Esto lo hacemos seleccionando las columnas respectivas para:
+
+Goles anotados por equipos de casa
+
+```G_Casa <- soccer19_20[, "FTHG"]```
+
+Y goles anotados por equipos visitantes
+
+```G_Visitante <- soccer19_20[, "FTAG"]```
+
 #### 3. Consulta cómo funciona la función table en R al ejecutar en la consola ?table
+
+```?table```
+
+Tal como su nombre lo indica por medio de esta función convertimos los datos seleccionados a una tabla, en este caso utilizamos como argumentos las columnas extraidas y generamos tablas de frecuencias relativas.
+
+Tabla de frecuencias goles de casa
+
+```F_GCasa <- table(G_Casa); F_GCasa```
+
+Tabla de frecuencias goles de visitante
+
+```F_GVisitante <- table(G_Visitante); F_GVisitante``` 
 
 Posteriormente elabora tablas de frecuencias relativas para estimar las siguientes probabilidades:
 
-#### * La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x = 0, 1, 2, ...)
-#### * La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y = 0, 1, 2, ...)
-#### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x = 0, 1, 2, ..., y = 0, 1, 2, ...)
+#### * La probabilidad (marginal) de que el equipo que juega en casa anote X goles (X = 0, 1, 2, ...)
+
+Para obtener la probabilidad marginal utilizamos la funcion prop.table, la cuál nos genera las probabilidades de que los equipos en casa anoten x cantidad de goles de acuerdo a las frecuencias obtenidas anteriormente y la expresamos como porcentaje.                                                                                                     
+
+```P_GCasa <- prop.table(F_GCasa)                                                                                                                                                paste("La probabilidad (%) de que el equipo de casa anote X goles es: ")                                                                                                   P_GCasa <- round((P_GCasa * 100), 3); P_GCasa```
+
+La probabilidad (%) de que el equipo de casa anote X goles es:
+
+
+#### * La probabilidad (marginal) de que el equipo que juega como visitante anote Y goles (Y = 0, 1, 2, ...)
+
+Realizamos la misma función del punto anterior ahora para las probabilidades de que los equipos visitantes anoten Y cantidad de goles.
+
+```P_GVisitante <- prop.table(F_GVisitante)                                                                                                                                   paste("La probabilidad (%) de que el equipo visitante anote Y goles es: ")                                                                                              P_GVisitante <- round((P_GVisitante * 100), 3); P_GVisitante```
+
+La probabilidad (%) de que el equipo visitante anote Y goles es:
+
+  
+#### * La probabilidad (conjunta) de que el equipo que juega en casa anote X goles y el equipo que juega como visitante anote Y goles (x = 0, 1, 2, ..., y = 0, 1, 2, ...)
+
+En este punto generamos una tabla de frecuencias conjunta, que nos muestra los diferentes casos utilizando como X los goles de los equipos en casa y como Y los goles de los equipos visitantes.
+
+```F_GConj <- table(G_Casa,G_Visitante); F_GConj```
+
+Finalmente utilizando la función prop.table generamos la probabilidad conjunta.
+
+```P_Conj <- prop.table(table(G_Casa, G_Visitante))                                                                                                                       paste("La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo visitante anote Y goles: ")                                                             P_Conj <- round((P_Conj * 100), 3); P_Conj```
+
+La probabilidad conjunta (%) de que el equipo de casa anote X goles y el equpo visitante anote Y goles:
+
