@@ -23,10 +23,24 @@ El término variable marginal se usa para referirse a una variable del subconjun
 
 El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅𝑿,𝒀(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅𝑿(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
 
+###Desarrollo de código
+
+Para este postwork comenzamos por llamar a la libreria ggplot2 que se requiere en el segundo inciso
+```R
+library(ggplot2)
+```
+Para obtener la probabilidad marginal de que los equipos anoten goles ya sea jugando en casa o de visitante se extraen las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (FTHG) y los goles anotados por los equipos que jugaron como visitante (FTAG)
+```R
+# 1-  
+# Se extrae los goles anotados por los equipos
+  G_Casa <- Soccer[, "FTHG"]        # Goles anotados por equipos de casa
+  G_Visitante <- Soccer[, "FTAG"]   # Goles anotados por equipos visitantes
+```
+Donde los resultados de goles casa son los siguientes
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/g_casa.PNG>
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/g_casa.PNG">
 </p>
-              
+De la misma manera se despliegan los goles de visitante            
  <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/g_visit.PNG">
 </p>
