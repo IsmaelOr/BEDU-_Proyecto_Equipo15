@@ -26,7 +26,22 @@ colnames(Local) <- c("Goles","Probabilidad"); Local
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.1.jpg">
 </p>
+Una vez hecho esto, se utiliza el paquete de "ggplot2" para graficar nuestro gráfico de barras. A su vez, hacemos uso del paquete "plotly" que nos servirá para hacer a nuestro gráfico de barras más dinámico.
+```R
+GL <- ggplot(Local, aes(x = Goles, y = Probabilidad)) + 
+    geom_col(colour = "black", fill= "yellow") +
+    ggtitle("Probabilidades marginales de goles de equipos Locales") + 
+    xlab("Goles") +
+    ylab("Probabilidades %") +
+    theme_light() +
+    theme(text = element_text(size = 15, face = "bold"))
 
+ggplotly(GL)
+```
+Podemos observar el siguiente gráfico:
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork3/2.4.png">
+</p>
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 De igual manera de como hicimos antes, primero, estas probabilidades se almacenan en un dataframe. Se renombran las columnas para tener: "Goles" y "Probabilidad".
 ```R
