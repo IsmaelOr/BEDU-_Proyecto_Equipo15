@@ -17,6 +17,12 @@ Ahora graficaremos probabilidades (estimadas) marginales y conjuntas para el nú
 ##### * La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
 ##### * La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 
+La distribución marginal es la distribución de probabilidad de un subconjunto de variables aleatorias de un conjunto de variables aleatorias, así la probabilidad marginal permite obtener probabilidades totales, como veremos en el tercer punto de este inciso.
+
+El término variable marginal se usa para referirse a una variable del subconjunto de retenido y cuyos valores pueden ser conocidos. La distribución de las variables marginales, la distribución marginal, se obtiene marginalizando sobre la distribución de variables descartadas y las variables descartadas se llaman a veces variables marginalizadas.
+
+El caso más simple es el de dos variables aleatorias reales 𝑿 y 𝒀 para la que se conozca su distribución de probabilidad conjunta 𝐅𝑿,𝒀(𝒙,𝒚), entonces la distribución marginal de 𝑿 es la distribución de probabilidad 𝐅𝑿(𝒙) de 𝑿 haciendo caso omiso de la información referente a 𝒀.
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_conjunta%20p3.PNG">
 </p>
