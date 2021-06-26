@@ -119,7 +119,7 @@ t.test(Medias, alternative = "two.sided", mu = 1)
 ```
 ![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
 
-Dado que nos resulto 0.858 podemos rechazar nuestra Hipótesis nula sobre que nuestras variables son independientes y aceptar la Hipótesis alternativa sobre que nuestras variables son Dependientes.
+Dado que nos resulto el p-value= 2.2e-16 y esto es menor a 1 podemos rechazar nuestra Hipótesis nula sobre que nuestras variables son independientes y aceptar la Hipótesis alternativa sobre que nuestras variables Goles de Local y Goles de Visita son <strong>Dependientes.</strong>
 
 ##### Nota.Para más información y ejemplos sobre las funciones empleadas se puede consultar las siguientes ligas:
 * https://biocosas.github.io/R/100_bootstrap.html
