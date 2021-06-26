@@ -23,7 +23,7 @@ Ahora vamos a generar un cúmulo de datos mayor al que se tenía, esta es una si
   URL_18_19 <- "https://www.football-data.co.uk/mmz4281/1819/SP1.csv"
   URL_19_20 <- "https://www.football-data.co.uk/mmz4281/1920/SP1.csv"
 ```
-##### Escogemos la carpeta donde se guardar los archivos `csv`.
+##### Escogemos la carpeta donde se guardan los archivos `csv`.
 ```R
   setwd(choose.dir(caption = "Select folder"))
 ```
@@ -38,41 +38,65 @@ Ahora vamos a generar un cúmulo de datos mayor al que se tenía, esta es una si
   SoccerList <- lapply(dir(), read.csv)
 ```
 
-#### 2. Revisa la estructura de de los data frames al usar las funciones: str, head, View y summary.
+#### 2. Revisa la estructura de de los data frames al usar las funciones: `str`, `head`, `View` ó `summary`.
 ```R
-  str(SoccerList[[1]])
-  str(SoccerList[[2]])
-  str(SoccerList[[3]])
+  str(SoccerList[[1]]); head(SoccerList[[1]]); View(SoccerList[[1]])
 ```
-##### Como se pudo checar en la revision de los datos hay que convertir la variable Date en una variable de tipo fecha (`Date`), mediante la funcion `mutate()` de la libreria de `dplyr`.
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList1.PNG?raw=true)
 ```R
-  SoccerList[[1]] <- mutate(SoccerList[[1]], Date = as.Date(Date, "%d/%m/%y"))  # Se asigna la codificacion con la que se muestra en el data set
+  str(SoccerList[[2]]); head(SoccerList[[2]]); View(SoccerList[[2]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList2.PNG?raw=true)
+```R
+  str(SoccerList[[3]]); head(SoccerList[[3]]); View(SoccerList[[3]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList3.PNG?raw=true)
+##### Como se pudo checar en la revision de los dataset cada uno posee casi la misma cantidad de variables y hay algunas que se deben modificar. Hay que convertir la variable Date en una variable de tipo fecha (`as.Date`), mediante la funcion `mutate()` de la libreria de `dplyr`.
+##### Se asigna la codificacion con la que se muestra en el data set por ejemplo si la fecha aparece como 20/03/17 la codificacion debe ser `%d/%m/%y` y para una fecha de este modo 20/03/2017 corresponde la codificacion `%d/%m/%Y`.
+```R
+  SoccerList[[1]] <- mutate(SoccerList[[1]], Date = as.Date(Date, "%d/%m/%y")) 
   SoccerList[[2]] <- mutate(SoccerList[[2]], Date = as.Date(Date, "%d/%m/%Y"))
   SoccerList[[3]] <- mutate(SoccerList[[3]], Date = as.Date(Date, "%d/%m/%Y"))
 ```
 ##### Al verificar de nuevo los datos se confirma que la codificacion y tipo de variable para `Date` son la misma para todos los componentes de la lista.
 ```R
   str(SoccerList[[1]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList1-1.PNG?raw=true)
+```R
   str(SoccerList[[2]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList2-1.PNG?raw=true)
+```R
   str(SoccerList[[3]])
 ```
-#### 3. Con la función select del paquete dplyr selecciona únicamente las columnas Date, HomeTeam, AwayTeam, FTHG, FTAG y FTR; esto para cada uno de los data frames. (Hint: también puedes usar lapply).
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList3-1.PNG?raw=true)
+#### 3. Con la función `select()` del paquete dplyr selecciona únicamente las columnas `Date`, `HomeTeam`, `AwayTeam`, `FTHG`, `FTAG` y `FTR`; esto para cada uno de los data frames. Mediante la funcion `lapply()` para poder aplicar el selec a todos los componentes de la lista.
 ```R
   SoccerList <- lapply(SoccerList, select, Date, HomeTeam, AwayTeam, FTHG, FTAG, FTR)
 ```
+##### Al momento de hacer la verificacion nuevamente se puede observar que los dataframe de la lista ahora solo cuenta con 6 variables.
 ```R
   str(SoccerList[[1]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList1-2.PNG?raw=true)
+```R
   str(SoccerList[[2]])
+```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList2-2.PNG?raw=true)
+```R
   str(SoccerList[[3]])
 ```
-#### 4. Asegúrate de que los elementos de las columnas correspondientes de los nuevos data frames sean del mismo tipo (Hint 1: usa as.Date y mutate para arreglar las fechas). Con ayuda de la función rbind forma un único data frame que contenga las seis columnas mencionadas en el punto 3 (Hint 2: la función do.call podría ser utilizada).
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/SoccerList3-2.PNG?raw=true)
+#### 4. Asegúrate de que los elementos de las columnas correspondientes de los nuevos data frames sean del mismo tipo. Con ayuda de la función `rbind` forma un único data frame que contenga las seis columnas mencionadas en el punto 3, la función `do.call()` podría ser utilizada
 ```R
   Soccer <- do.call(rbind, SoccerList)
 ```
-##### Comprobamos que se hallan juntado todos datos de la lista en un dataframe.
+##### Comprobamos que se hallan juntado todos datos de la lista en un dataframe. Debe aparecer un dataframe con 1140 observaciones y 6 variables.
 ```R
   str(Soccer); View(Soccer)
 ```
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork2/total.PNG?raw=true)
 ##### Por ultimo se exporta el dataFrame a un archivo csv
 ```R
   write.csv(Soccer, "Soccer_2017-2020.csv", row.names = FALSE)
