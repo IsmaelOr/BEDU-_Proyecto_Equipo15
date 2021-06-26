@@ -97,6 +97,8 @@ El resultado de la tabla conjunta es:
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork3/prob_conjunta%20p3.PNG">
 </p>
+
+
 #### 2. Realiza lo siguiente:
 ##### * Un gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo de casa.
 Para realizar las gráficas de las probabilidades marginales, primero estas se almacenan en un dataframe. Se renombran las columnas para tener: "Goles" y "Probabilidad".
