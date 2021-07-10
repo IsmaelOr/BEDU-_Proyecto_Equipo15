@@ -557,7 +557,15 @@ De igual forma desde la gráfica obtenida se puede observar que nuestras variabl
 ### Postwork 5
 
 ### Postwork 6
+**Importa el conjunto de datos match.data.csv a R y realiza lo siguiente:**
 
+**Agrega una nueva columna sumagoles que contenga la suma de goles por partido.**
+
+**Obtén el promedio por mes de la suma de goles.
+
+**Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.
+
+**Grafica la serie de tiempo.
 ### Postwork 7
 
 ### Postwork 8
