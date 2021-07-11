@@ -15,10 +15,7 @@ Repositorio de entrega de Postwork para el Proyecto del Curso de BEDU en Data Sc
 - [Postwork_2](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork2)
 - [Postwork_3](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork3)
 - [Postwork_4](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork4)
-- [Postwork_5](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork5)
-- [Postwork_6](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork6)
-- [Postwork_7](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork7)
-- [Postwork_8](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork8)
+
 ## :soccer: Desarrollo del Proyecto
 #### Se hara un analisis estadistico de un dataset de los juegos de soccer de la primera divison española de las temporadas que comprende 2017-2020, enfocandonos en los goles anotados en los partidos de los equipos Locales y Visitantes.
 
@@ -562,13 +559,74 @@ De igual forma desde la gráfica obtenida se puede observar que nuestras variabl
 ### Postwork 6
 **Importa el conjunto de datos match.data.csv a R y realiza lo siguiente:**
 
+```R
+setwd(choose.dir(caption = "Select folder"));
+match.data <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2021/main/Sesion-06/Postwork/match.data.csv")
+```
 **Agrega una nueva columna sumagoles que contenga la suma de goles por partido.**
 
-**Obtén el promedio por mes de la suma de goles.
+```R
+match.data[,'sumagoles'] <- match.data[, 3] + match.data[,5]
+head(match.data)
+```
 
-**Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.
+**Obtén el promedio por mes de la suma de goles.**
+Antes de crear la columna de promedio por mes, tenemos que arreglar el formato de las fechas
+```R
+match.data <- mutate(match.data, date = as.Date(date,'%Y-%m-%d'))
+```
 
-**Grafica la serie de tiempo.
+Y creamos las columna mes y fecha 
+```R
+match.data[, 'year'] <- year(match.data$date)
+match.data[,'month'] <- month(match.data$date)
+```
+
+Ya con esto hecho podemos crear el dataframe *datos* que almacena el promedio de la suma de goles por mes de cada año
+```R
+datos <- match.data %>% group_by(year, month) %>% summarize(promedio_goles = mean(sumagoles))
+datos <- as.data.frame(datos);
+head(datos)
+```
+
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
+
+**Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.**
+
+Ahora bien, antes de crear la serie de tiempo tenemos que hacer nuestro df regular, dado que los meses junio y julio de nuestros datos no tienen temporada de soccer, por lo tanto no hay goles en esos meses. Para esto crearemos un dataframe...
+```R
+fech <- paste(toString(datos$year[1]),"/8/1", sep = ""); #fecha inicial de los datos
+fechf <- paste(toString(datos$year[length(datos[,1])]),"/12/1", sep = "") #fecha final de los datos
+```
+Creamos una secuencia de fechas %Y-%m-%d con todos los meses, incluidos junio y julio donde no hay temporadas de soccer, esta secuencia empieza en la fecha inicial *fech* y termina en la fecha final *fechf*. 
+```R
+Meses <- seq(as.Date(fech), as.Date(fechf), by = "month")
+```
+y creamos el dataframe *ft*, el cual contiene las columnas year y month desde "2010/8/1" hasta "2020/12/1".
+```R
+ft <- data.frame('year' = year(Meses), 'month' = month(Meses)); 
+head(ft)
+ ```
+ 
+
+
+```R
+Promedio_goles.ts <- ts(final$promedio_goles, start = c(2010,8), end = c(2019, 12), fr = 12)
+Promedio_goles.ts
+```
+
+**Grafica la serie de tiempo.**
+
+
+```R
+plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", main = "Serie de Goles Promedio",
+     sub = "Serie mensual: Agosto de 2010 a Diciembre de 2019")
+```
+
+obtenemos la siguiente serie de tiempo:
+
+![alt text](https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/test.PNG)
+
 ### Postwork 7
 
 ### Postwork 8
