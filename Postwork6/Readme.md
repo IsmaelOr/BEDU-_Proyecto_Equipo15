@@ -13,13 +13,16 @@ match.data[,'sumagoles'] <- match.data[, 3] + match.data[,5]
 head(match.data)
 ```
 ![alt text]()
+
+
 **Obtén el promedio por mes de la suma de goles.**
+
 Antes de crear la columna de promedio por mes, tenemos que arreglar el formato de las fechas
 ```R
 match.data <- mutate(match.data, date = as.Date(date,'%Y-%m-%d'))
 ```
 
-Y creamos las columna mes y fecha 
+Y creamos las columna year y month
 ```R
 match.data[, 'year'] <- year(match.data$date)
 match.data[,'month'] <- month(match.data$date)
