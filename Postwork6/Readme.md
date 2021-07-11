@@ -57,11 +57,12 @@ Creamos una secuencia de fechas %Y-%m-%d con todos los meses, incluidos junio y 
 ```R
 Meses <- seq(as.Date(fech), as.Date(fechf), by = "month")
 ```
-y creamos el dataframe *ft*, el cual contiene las columnas year y month desde "2010/8/1" hasta "2020/12/1".
+y creamos el dataframe *ft*, el cual contiene las columnas year,años desde 2010 hasta 2020, y month, el cual contiene los meses del 1 al 12, con frecuencia de 12, empezando por el mes 8 y terminando por el mes 12.
 ```R
 ft <- data.frame('year' = year(Meses), 'month' = month(Meses)); 
-head(ft)
+head(ft,13)
  ```
+ 
 A continuacion uniremos los dataframes *ft* y *datos* en un nuevo df llamado *final*, de modo que para cada mes por año dentro de *ft* le corresponda el promedio de goles por mes dentro de *datos*, note que en los meses donde no hay temporada, junio y julio, devolverá un *NA*. 
 Todo este proceso fue hecho para que nuestro dataframe *final* tenga todos los meses por año con su correspondiente promedio de goles por mes y así poder hacer una serie de tiempo regular. 
 ```R
@@ -75,7 +76,7 @@ final[is.na(final)] <- 0
 final <- final[order(final$year),]
 ```
 
-Por último creamos la serie de tiempo de los goles promedios por mes desde la fecha inicial hasta la final y con frecuencia de 12, por la cantidad de meses por año.
+Y creamos la serie de tiempo de los goles promedios por mes con la función [ts()], con intervalo desde la fecha inicial "2010/08" hasta la final "2020/12" y con frecuencia de 12, por la cantidad de meses por año.
 ```R
 Promedio_goles.ts <- ts(final$promedio_goles, start = c(2010,8), end = c(2019, 12), fr = 12)
 Promedio_goles.ts
@@ -83,12 +84,10 @@ Promedio_goles.ts
 
 **Grafica la serie de tiempo.**
 
-
+Por último, usamos la funcion plot para graficar la serie de tiempo
 ```R
 plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", main = "Serie de Goles Promedio",
      sub = "Serie mensual: Agosto de 2010 a Diciembre de 2019")
 ```
-
-obtenemos la siguiente serie de tiempo:
 
 ![alt text]()
