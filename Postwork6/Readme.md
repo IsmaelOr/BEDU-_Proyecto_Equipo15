@@ -1,10 +1,10 @@
 # Postwork 6 - Series de tiempo
 ## :dart: Objetivo
-- Tiene como objetivo que practiques los comandos básicos aprendidos durante la sesión, de tal modo que sirvan para reafirmar el conocimiento. Recuerda que la programación es como un deporte en el que se debe practicar, habrá caídas, pero lo importante es levantarse y seguir adelante.
+Aprender a crear una serie de tiempo en R.
 
 ## 🔧 Requisitos
-* Concluir los retos
-* Haber estudiado los ejemplos durante la sesión
+* Tener instalado R y RStudio
+* Haber trabajado con el prework y el work
 
 ## 🤓 Desarrollo
 
