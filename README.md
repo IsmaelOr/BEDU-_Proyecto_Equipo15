@@ -559,6 +559,14 @@ De igual forma desde la gráfica obtenida se puede observar que nuestras variabl
 ### Postwork 6
 **Importa el conjunto de datos match.data.csv a R y realiza lo siguiente:**
 
+Llamamos las paqueterías correspondientes para manipular nuestro dataframe
+```R
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+library(tidyverse)
+```
+
 Definimos el dataframe *match.data* usando el url del archivo csv
 ```R
 match.data <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2021/main/Sesion-06/Postwork/match.data.csv")
