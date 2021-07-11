@@ -23,7 +23,7 @@ summary(SmallData)
 ```
 De lo anterior obtenemos el siguiente resumen de `SmallData`
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/SmallData_summary.PNG">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork5/SmallData_summary.PNG">
 </p>
 
 
@@ -58,7 +58,7 @@ equipos <- listaSoccer$teams
 ```
 El resultado es una lista conformada por 4 dataframes y 2 valores lógicos como podemos ver en la imagen: 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/listasoccer.PNG">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork5/listasoccer.PNG">
 </p>
 
 
@@ -78,36 +78,10 @@ ranking <- rank.teams(anotaciones,equipos,
 ```
 De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de agosto del 2017 al 19 de julio del 2020:
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork4/rankings.PNG">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork5/rankings.PNG">
 </p>
 
 4. Finalmente estima las probabilidades de los eventos, el equipo de casa gana, el equipo visitante gana o el resultado es un empate para los partidos que se jugaron en la última fecha del vector de fechas `fecha`. Esto lo puedes hacer con ayuda de la función `predict` y usando como argumentos `ranking` y `fecha[n]` que deberá especificar en `date`.
-
-
-
-Verificando que la estructura del data frame es la adecuada usamos la función `colnames` para renombrar las columnas a como lo requiere `fbRanks`, con los datos en el orden y con el nombre que requerimos lo guardamos en un nuevo archivo csv. 
-```R
-colnames(SmallData) <- c("date", "home.team", "home.score", "away.team", "away.score")
-
-write.csv(SmallData, file = "Soccer.csv", row.names = F)
-```
-
-2. Con la función `create.fbRanks.dataframes` del paquete `fbRanks` importe el archivo *soccer.csv* a `R` y al mismo tiempo asignelo a una variable llamada `listasoccer`. Se creará una lista con los elementos `scores` y `teams` que son data frames listos para la función `rank.teams`. Asigna estos data frames a variables llamadas `anotaciones` y `equipos`.
-
-```R
-install.packages("fbRanks")
-library(fbRanks)
-
-listaSoccer <- create.fbRanks.dataframes(scores.file = "Soccer.csv")
-
-anotaciones <- listaSoccer$scores
-equipos <- listaSoccer$teams
-
-```
-
-
-
-3. Con ayuda de la función `unique` crea un vector de fechas (`fecha`) que no se repitan y que correspondan a las fechas en las que se jugaron partidos. Crea una variable llamada `n` que contenga el número de fechas diferentes. Posteriormente, con la función `rank.teams` y usando como argumentos los data frames `anotaciones` y `equipos`, crea un ranking de equipos usando únicamente datos desde la fecha inicial y hasta la penúltima fecha en la que se jugaron partidos, estas fechas las deberá especificar en `max.date` y `min.date`. Guarda los resultados con el nombre `ranking`.
-
-4. Finalmente estima las probabilidades de los eventos, el equipo de casa gana, el equipo visitante gana o el resultado es un empate para los partidos que se jugaron en la última fecha del vector de fechas `fecha`. Esto lo puedes hacer con ayuda de la función `predict` y usando como argumentos `ranking` y `fecha[n]` que deberá especificar en `date`.
-
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork4/prediction.PNG">
+</p>
