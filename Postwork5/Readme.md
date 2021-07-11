@@ -82,6 +82,8 @@ De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de ag
 </p>
 
 4. Finalmente estima las probabilidades de los eventos, el equipo de casa gana, el equipo visitante gana o el resultado es un empate para los partidos que se jugaron en la última fecha del vector de fechas `fecha`. Esto lo puedes hacer con ayuda de la función `predict` y usando como argumentos `ranking` y `fecha[n]` que deberá especificar en `date`.
+
+Predict es una función de fbRanks que predice el resultado (ganar, perder o empatar) y los goles para los partidos , se le da como argumento la lista de ranking y como fecha para aprendizaje le damos la última del vector. Los resultados obtenidos son los siguientes:
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork4/prediction.PNG">
 </p>
