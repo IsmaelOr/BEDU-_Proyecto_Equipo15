@@ -58,6 +58,35 @@ class(alldata)
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/class.JPG">
 </p>
 
+Por último para responder al problema de este inciso y realizar un count( ) para obtener el total de documentos (registros) obtenidos, se hizo lo siguiente:
+
+```R
+cantidad<- conexion_bd$count('{}')
+cantidad
+```
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/cantidad.JPG">
+</p>
+
+Y como podemos observar hemos obtenido 3800 documentos (registros) y corresponde correctamente el número de registro que contiene nuestro archivo CSV.
+
 #### 3.- Realiza una consulta utilizando la sintaxis de Mongodb en la base de datos, para conocer el número de goles que metió el Real Madrid el 20 de Diciembre de 2015 y contra que equipo jugó ¿perdió o fue goleada?
+
+Para obtener esta consulta hicimos uso de un find( ) para insertar nuestra consulta, ya que nosotros guardamos la fecha como un String y necesitamos filtrar el partido del 20 de Diciembre del 2015, en nuestra base de datos este dato se encuentra de la siguiente forma "2015-12-20", y dado que queremos filtrar el partido del Real Madrid como local, entonces nuestro campo "home.team" debe ser igual a "Real Madrid".
+La consulta quedo de la siguiente forma:
+
+```R
+consulta<- conexion_bd$find(
+  query = '{"date":"2015-12-20", "home.team":"Real Madrid"}',
+  fields = '{"_id":false, "home.team":true, "home.score":true, "away.team":true, "away.score":true}'
+)
+consulta
+```
+Generamos una projection, que en este caso se conoce como fields para solo mostrar el nombre del equipo local, sus goles anotados, el equipo visitante y sus goles anotados, quitando de esta forma el id que viene por defecto en MongoDB.
+
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/consulta.JPG">
+</p>
+
 
 #### 4.- Por último, no olvides cerrar la conexión con la BDD.
