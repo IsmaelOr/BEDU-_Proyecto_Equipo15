@@ -17,6 +17,11 @@ Se descargo el archivo match.data.csv, para después importarlo en MongoDB. Los 
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/Create_Database.JPG">
 </p>
 
+Después dentro de nuestra colección "match" importamos nuestro archivo CSV de la siguiente forma:
+
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/Upload_CSV.JPG">
+</p>
 
 #### 2.- Una vez hecho esto, realizar un count para conocer el número de registros que se tiene en la base.
 
