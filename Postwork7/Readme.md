@@ -30,17 +30,18 @@ Una vez cargados los documentos de nuestro archivo CSV, procedemos a conectar co
 Se investigo sobre la libería "mongolite" para poder hacer la conexión y el resultado fue el siguiente:
 
 ```R
-#install.packages("mongolite")
+# install.packages("mongolite");
 
 library(mongolite)  
 
-prueba<- mongo(
+conexion_bd<- mongo(
   collection = "match",
   db="match_games", 
   url = "mongodb+srv://timmitonx:ismael132@cluster0.dmt93.mongodb.net/test",
   verbose = FALSE,
   options = ssl_options()
   )
+
 ```
 
 #### 3.- Realiza una consulta utilizando la sintaxis de Mongodb en la base de datos, para conocer el número de goles que metió el Real Madrid el 20 de Diciembre de 2015 y contra que equipo jugó ¿perdió o fue goleada?
