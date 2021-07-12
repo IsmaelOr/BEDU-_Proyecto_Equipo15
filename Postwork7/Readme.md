@@ -88,5 +88,8 @@ Generamos una projection, que en este caso se conoce como fields para solo mostr
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/consulta.JPG">
 </p>
 
+Y como podemos ver hemos obtenido que el Real Madrid en ese partido jugó contra el Vallecano y que le gano por una goleada de 10 - 2. <br/>
+
+<iframe src="https://giphy.com/embed/7SWQWYqjYF6XtK89EW" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/realmadrid-futbol-real-madrid-7SWQWYqjYF6XtK89EW">via GIPHY</a></p>
 
 #### 4.- Por último, no olvides cerrar la conexión con la BDD.
