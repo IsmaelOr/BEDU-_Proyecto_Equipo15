@@ -96,3 +96,9 @@ Y como podemos ver hemos obtenido que el Real Madrid en ese partido jugó contra
 
 
 #### 4.- Por último, no olvides cerrar la conexión con la BDD.
+
+Por ultimo cerramos la conexión a nuestra Base de Datos, borrando nuestra variable de conexion_bd
+
+```R
+rm(conexion_bd)
+```
