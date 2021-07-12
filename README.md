@@ -15,6 +15,10 @@ Repositorio de entrega de Postwork para el Proyecto del Curso de BEDU en Data Sc
 - [Postwork_2](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork2)
 - [Postwork_3](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork3)
 - [Postwork_4](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork4)
+- [Postwork_5](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork5)
+- [Postwork_6](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork6)
+- [Postwork_7](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork7)
+- [Postwork_8](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/tree/main/Postwork8)
 
 ## :soccer: Desarrollo del Proyecto
 #### Se hara un analisis estadistico de un dataset de los juegos de soccer de la primera divison española de las temporadas que comprende 2017-2020, enfocandonos en los goles anotados en los partidos de los equipos Locales y Visitantes.
