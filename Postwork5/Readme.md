@@ -23,7 +23,7 @@ summary(SmallData)
 ```
 De lo anterior obtenemos el siguiente resumen de `SmallData`
 <p align = "center">
-  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork4/smallData_summary.PNG">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/smallData_summary.PNG">
 </p>
 
 
@@ -58,7 +58,7 @@ equipos <- listaSoccer$teams
 ```
 El resultado es una lista conformada por 4 dataframes y 2 valores lógicos como podemos ver en la imagen: 
 <p align = "center">
-  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork4/listasoccer.PNG">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/listasoccer.PNG">
 </p>
 
 
@@ -78,12 +78,12 @@ ranking <- rank.teams(anotaciones,equipos,
 ```
 De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de agosto del 2017 al 19 de julio del 2020:
 <p align = "center">
-  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork4/ranking.PNG">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/ranking.PNG">
 </p>
 
 #### 4. Finalmente estima las probabilidades de los eventos, el equipo de casa gana, el equipo visitante gana o el resultado es un empate para los partidos que se jugaron en la última fecha del vector de fechas `fecha`. Esto lo puedes hacer con ayuda de la función `predict` y usando como argumentos `ranking` y `fecha[n]` que deberá especificar en `date`.
 
 Predict es una función de fbRanks que predice el resultado (ganar, perder o empatar) y los goles para los partidos , se le da como argumento la lista de ranking y como fecha para aprendizaje le damos la última del vector. Los resultados obtenidos son los siguientes:
 <p align = "center">
-  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork4/prediction.PNG">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/prediction.PNG">
 </p>
