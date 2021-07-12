@@ -13,6 +13,9 @@ Utilizando el manejador de BDD Mongodb Compass (previamente instalado), deberás
 #### 1.- Alojar el fichero match.data.csv en una base de datos llamada match_games, nombrando la collection como match.
 Se descargo el archivo match.data.csv, para después importarlo en MongoDB. Los pasos para poder importar este archivo, primero fue crear nuestra Base de Datos con nombre "match_games" y una colección con nombre "match":
 
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork7/Create_Database.jgp">
+</p>
 
 
 #### 2.- Una vez hecho esto, realizar un count para conocer el número de registros que se tiene en la base.
