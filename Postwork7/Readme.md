@@ -44,7 +44,9 @@ conexion_bd<- mongo(
 
 ```
 
-Básicamnete consiste en utilizar la función mongo( ) que es la que se va a encargar de hacer la conexión a nuestra Base de Datos, y se le tienen que pasar como parámetros el nombre de nuestra colección (match), el nombre de la base de datos (match_games) y la url de nuestro localhost o nuestro cluster en MongoDB Atlas (nosotros utilizamos la url de el cluster en la nube) y como en la documentación lo pide verbose (FALSE) y options (ssl_options()).
+Básicamnete consiste en cargar nuestra librería "mongolite" y utilizar la función mongo( ) que es la que se va a encargar de hacer la conexión a nuestra Base de Datos, y se le tienen que pasar como parámetros el nombre de nuestra colección (match), el nombre de la base de datos (match_games) y la url de nuestro localhost o nuestro cluster en MongoDB Atlas (nosotros utilizamos la url de el cluster en la nube) y como en la documentación lo pide verbose (FALSE) y options (ssl_options()).
+
+
 
 #### 3.- Realiza una consulta utilizando la sintaxis de Mongodb en la base de datos, para conocer el número de goles que metió el Real Madrid el 20 de Diciembre de 2015 y contra que equipo jugó ¿perdió o fue goleada?
 
