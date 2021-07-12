@@ -90,9 +90,6 @@ Generamos una projection, que en este caso se conoce como fields para solo mostr
 
 Y como podemos ver hemos obtenido que el Real Madrid en ese partido jugó contra el Vallecano y que le gano por una goleada de 10 - 2. <br/>
 
-
-![Alt Text](https://media.giphy.com/media/7SWQWYqjYF6XtK89EW/giphy.gif)
-
 <p align = "center">
   <img src = "https://media.giphy.com/media/7SWQWYqjYF6XtK89EW/giphy.gif">
 </p>
