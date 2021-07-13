@@ -21,8 +21,7 @@ Creamos la columna *sumagoles* como la suma de las columnas 3 y 5, goles como lo
 match.data[,'sumagoles'] <- match.data[, 3] + match.data[,5]
 head(match.data)
 ```
-![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_datos.png?raw=true)
-
+![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_matchdata.png?raw=true)
 
 **Obtén el promedio por mes de la suma de goles.**
 
@@ -44,7 +43,7 @@ datos <- as.data.frame(datos);
 head(datos)
 ```
 
-![alt text]()
+![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_datos.png?raw=true)
 
 **Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.**
 
