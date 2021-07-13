@@ -73,14 +73,22 @@ A continuacion uniremos los dataframes *ft* y *datos* en un nuevo df llamado *fi
 Todo este proceso fue hecho para que nuestro dataframe *final* tenga todos los meses por año con su correspondiente promedio de goles por mes y así poder hacer una serie de tiempo regular. 
 ```R
 final <- merge(x = datos, y = ft, by = c("month","year"), all = TRUE)
+final <- final[order(final$year),] #ordenamos por año
 final
 ```
 
-Rellenamos estos NA's con 0 y ordenamos el dataframe por año 
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/final.png?raw=true">
+</p>
+
+Rellenamos estos NA's con 0 
 ```R
 final[is.na(final)] <- 0
-final <- final[order(final$year),]
 ```
+
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/final_0.png?raw=true">
+</p>
 
 Y creamos la serie de tiempo de los goles promedios por mes con la función [ts()], con intervalo desde la fecha inicial "2010/08" hasta la final "2020/12" y con frecuencia de 12, por la cantidad de meses por año.
 ```R
