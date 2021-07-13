@@ -61,7 +61,7 @@ y creamos el dataframe *ft*, el cual contiene las columnas year,años desde 2010
 ft <- data.frame('year' = year(Meses), 'month' = month(Meses)); 
 head(ft,13)
  ```
- 
+ ![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ft.png?raw=true)
 A continuacion uniremos los dataframes *ft* y *datos* en un nuevo df llamado *final*, de modo que para cada mes por año dentro de *ft* le corresponda el promedio de goles por mes dentro de *datos*, note que en los meses donde no hay temporada, junio y julio, devolverá un *NA*. 
 Todo este proceso fue hecho para que nuestro dataframe *final* tenga todos los meses por año con su correspondiente promedio de goles por mes y así poder hacer una serie de tiempo regular. 
 ```R
@@ -89,4 +89,4 @@ plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", mai
      sub = "Serie mensual: Agosto de 2010 a Diciembre de 2019")
 ```
 
-![alt text]()
+![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ts_golespermonth.jpg?raw=true)
