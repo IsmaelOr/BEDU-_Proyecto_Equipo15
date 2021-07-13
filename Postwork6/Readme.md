@@ -21,7 +21,10 @@ Creamos la columna *sumagoles* como la suma de las columnas 3 y 5, goles como lo
 match.data[,'sumagoles'] <- match.data[, 3] + match.data[,5]
 head(match.data)
 ```
-![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_matchdata.png?raw=true)
+
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_matchdata.png?raw=true">
+</p>
 
 **Obtén el promedio por mes de la suma de goles.**
 
@@ -42,8 +45,9 @@ datos <- match.data %>% group_by(year, month) %>% summarize(promedio_goles = mea
 datos <- as.data.frame(datos);
 head(datos)
 ```
-
-![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_datos.png?raw=true)
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_datos.png?raw=true">
+</p>
 
 **Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.**
 
@@ -61,7 +65,10 @@ y creamos el dataframe *ft*, el cual contiene las columnas year,años desde 2010
 ft <- data.frame('year' = year(Meses), 'month' = month(Meses)); 
 head(ft,13)
  ```
- ![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ft.png?raw=true)
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ft.png?raw=true">
+</p>
+
 A continuacion uniremos los dataframes *ft* y *datos* en un nuevo df llamado *final*, de modo que para cada mes por año dentro de *ft* le corresponda el promedio de goles por mes dentro de *datos*, note que en los meses donde no hay temporada, junio y julio, devolverá un *NA*. 
 Todo este proceso fue hecho para que nuestro dataframe *final* tenga todos los meses por año con su correspondiente promedio de goles por mes y así poder hacer una serie de tiempo regular. 
 ```R
@@ -89,4 +96,6 @@ plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", mai
      sub = "Serie mensual: Agosto de 2010 a Diciembre de 2019")
 ```
 
-![alt text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ts_golespermonth.jpg?raw=true)
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ts_golespermonth.jpg?raw=true">
+</p>
