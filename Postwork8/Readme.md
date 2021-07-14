@@ -79,6 +79,7 @@ ui <- fluidPage(
                         ),
 ```
 ![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork8/barrasLocal.PNG?raw=true)
+![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork8/barrasVisitante.PNG?raw=true)
 
 #### 5.- Realiza una pestaña donde agregues las imágenes de las gráficas del postwork 3
 
@@ -127,7 +128,7 @@ ui <- fluidPage(
 )
 ```
 ![alt_text](https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork8/Pesta%C3%B1amomios.PNG?raw=true)
-![alt_text]()
+
 ##### Y con esto se finaliza con la parte de codigo para la visualizacion del dashboard
 
 #### Ahora se elavora la parte del `server` el cual realiza las funciones logicas, calculos, graficaciones, etc.
