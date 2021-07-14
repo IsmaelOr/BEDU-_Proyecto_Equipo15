@@ -560,16 +560,9 @@ Dado que nos resulto el p-value= 2.2e-16 y esto es menor a 1 podemos rechazar nu
 De igual forma desde la gráfica obtenida se puede observar que nuestras variables son Dependientes ya que la linea de media gráficada no se encuentra en 1, por lo que confirmamos que nuestro resultado esta correcto.
 ### Postwork 5
 
-### Postwork 6
-**Importa el conjunto de datos match.data.csv a R y realiza lo siguiente:**
+### Postwork 6 
 
-Llamamos las paqueterías correspondientes para manipular nuestro dataframe
-```R
-library(dplyr)
-library(ggplot2)
-library(lubridate)
-library(tidyverse)
-```
+**Importa el conjunto de datos match.data.csv a R y realiza lo siguiente:**
 
 Definimos el dataframe *match.data* usando el url del archivo csv
 ```R
@@ -582,8 +575,10 @@ Creamos la columna *sumagoles* como la suma de las columnas 3 y 5, goles como lo
 match.data[,'sumagoles'] <- match.data[, 3] + match.data[,5]
 head(match.data)
 ```
-![alt text]()
 
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_matchdata.png?raw=true">
+</p>
 
 **Obtén el promedio por mes de la suma de goles.**
 
@@ -604,8 +599,9 @@ datos <- match.data %>% group_by(year, month) %>% summarize(promedio_goles = mea
 datos <- as.data.frame(datos);
 head(datos)
 ```
-
-![alt text]()
+<p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/head_datos.png?raw=true">
+</p>
 
 **Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.**
 
@@ -623,19 +619,30 @@ y creamos el dataframe *ft*, el cual contiene las columnas year,años desde 2010
 ft <- data.frame('year' = year(Meses), 'month' = month(Meses)); 
 head(ft,13)
  ```
- 
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ft.png?raw=true">
+</p>
+
 A continuacion uniremos los dataframes *ft* y *datos* en un nuevo df llamado *final*, de modo que para cada mes por año dentro de *ft* le corresponda el promedio de goles por mes dentro de *datos*, note que en los meses donde no hay temporada, junio y julio, devolverá un *NA*. 
 Todo este proceso fue hecho para que nuestro dataframe *final* tenga todos los meses por año con su correspondiente promedio de goles por mes y así poder hacer una serie de tiempo regular. 
 ```R
 final <- merge(x = datos, y = ft, by = c("month","year"), all = TRUE)
+final <- final[order(final$year),] #ordenamos por año
 final
 ```
 
-Rellenamos estos NA's con 0 y ordenamos el dataframe por año 
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/final.png?raw=true">
+</p>
+
+Rellenamos estos NA's con 0 
 ```R
 final[is.na(final)] <- 0
-final <- final[order(final$year),]
 ```
+
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/final_0.png?raw=true">
+</p>
 
 Y creamos la serie de tiempo de los goles promedios por mes con la función [ts()], con intervalo desde la fecha inicial "2010/08" hasta la final "2020/12" y con frecuencia de 12, por la cantidad de meses por año.
 ```R
@@ -651,7 +658,9 @@ plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", mai
      sub = "Serie mensual: Agosto de 2010 a Diciembre de 2019")
 ```
 
-![alt text]()
+ <p align = "center">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ts_golespermonth.jpg?raw=true">
+</p>
 
 ### Postwork 7
 
