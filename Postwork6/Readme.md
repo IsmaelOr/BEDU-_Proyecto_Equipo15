@@ -107,3 +107,51 @@ plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", mai
  <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ts_golespermonth.jpg?raw=true">
 </p>
+
+**Solución con función Zoo (Z's Ordered Observations) de R**
+
+Otra forma de realizar la serie de tiempo es con el paquete Zoo de R, instalandolo previamente en caso de ser necesario, el cuál  está diseñado para crear series de tiempo irregulares, en este caso utilizamos un código similar para obtener la suma de goles y las columnas de mes y año. 
+
+```R
+install.packages("lubridate")
+install.packages("zoo")
+library(zoo)
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+
+match<- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2021/main/Sesion-06/Postwork/match.data.csv")
+match[,"sumagoles"]<- match$home.score+match$away.score
+match[,"mes"]<- month(match$date) 
+match[,"anio"]<- year(match$date)
+``` 
+
+Sin embargo, antes de obtener el promedio tenemos que generar una nueva columna para agrupar que tenga formato de fecha (utilizando la librería "lubridate"), misma que filtramos desde el mes de agosto 2010 a diciembre 2019
+
+```R
+match <- match %>% 
+  mutate(mes_anio = my(paste(mes, anio)))%>%
+  filter(date >= "2010-08-28",
+         date <= "2019-12-22")
+```
+Después obtenemos el promedio de goles mensual de manera similar con esta columna, utilizando la función group_by.
+
+```R
+promediomensual <-match %>%
+  group_by(mes_anio) %>%
+  summarise (promedio_goles = mean(sumagoles))
+  ```
+  
+  
+Utilizamos la función zoo para obtener la serie de tiempo.
+```R
+Promedio_goles.zoo=zoo(promediomensual$promedio_goles, order.by=promediomensual$mes_anio) 
+```
+
+Y finalmente la graficamos.
+```R
+plot(Promedio_goles.zoo, xlab = "Tiempo", ylab = "Promedio de goles por mes", main = "Serie de goles Promedio", 
+     sub= "Serie mensual:Agosto de 2010 a Diciembre de 2019", col = "blue")
+```  
+
+La diferencia con la serie de tiempo anterior es que esta no muestra los meses donde no hubo partidos; sin embargo, ambas series nos permiten identificar la tendencia a lo largo del tiempo la cual mantiene un promedio de 2 a 3 goles por partido y que a pesar de que hay años donde el promedio es mayor o menor podemos predecir que esta tendencia continuará en un futuro.
