@@ -141,17 +141,25 @@ promediomensual <-match %>%
   group_by(mes_anio) %>%
   summarise (promedio_goles = mean(sumagoles))
   ```
-  
+  <p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork6/Promedio%20mensual%20goles.PNG?raw=true">
+</p>
   
 Utilizamos la función zoo para obtener la serie de tiempo.
 ```R
 Promedio_goles.zoo=zoo(promediomensual$promedio_goles, order.by=promediomensual$mes_anio) 
 ```
+ <p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork6/Promedio%20goles%20zoo.PNG?raw=true">
+</p>
 
 Y finalmente la graficamos.
 ```R
 plot(Promedio_goles.zoo, xlab = "Tiempo", ylab = "Promedio de goles por mes", main = "Serie de goles Promedio", 
      sub= "Serie mensual:Agosto de 2010 a Diciembre de 2019", col = "blue")
-```  
+``` 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/IsmaelOr/BEDU_Proyecto_Equipo15/main/Imagenes/Postwork6/Serie%20tiempo%20zoo.png?raw=true">
+</p>
 
 La diferencia con la serie de tiempo anterior es que esta no muestra los meses donde no hubo partidos; sin embargo, ambas series nos permiten identificar la tendencia a lo largo del tiempo la cual mantiene un promedio de 2 a 3 goles por partido y que a pesar de que hay años donde el promedio es mayor o menor podemos predecir que esta tendencia continuará en un futuro.
