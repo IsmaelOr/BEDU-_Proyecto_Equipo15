@@ -108,6 +108,8 @@ plot(Promedio_goles.ts, xlab = "Tiempo", ylab = "Promedio de goles por mes", mai
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork6/ts_golespermonth.jpg?raw=true">
 </p>
 
+Cabe mencionar que no se utilizó la serie de tiempo ts con un intervalo de 12 o 10 debido a que si bien, la mayoría de las temporadas duraron 10 meses (agosto a mayo), en el año 2013 la temporada duró 11 meses, es decir hasta el mes de junio, por lo que la serie debía ajustarse a que tuviera intervalos regulares.
+
 **Solución con función Zoo (Z's Ordered Observations) de R**
 
 Otra forma de realizar la serie de tiempo es con el paquete Zoo de R, instalandolo previamente en caso de ser necesario, el cuál  está diseñado para crear series de tiempo irregulares, en este caso utilizamos un código similar para obtener la suma de goles y las columnas de mes y año. 
@@ -163,3 +165,5 @@ plot(Promedio_goles.zoo, xlab = "Tiempo", ylab = "Promedio de goles por mes", ma
 </p>
 
 La diferencia con la serie de tiempo anterior es que esta no muestra los meses donde no hubo partidos; sin embargo, ambas series nos permiten identificar la tendencia a lo largo del tiempo la cual mantiene un promedio de 2 a 3 goles por partido y que a pesar de que hay años donde el promedio es mayor o menor podemos predecir que esta tendencia continuará en un futuro.
+
+*****Nota. Para mayor información sobre las series de tiempo ts y zoo consultar: https://estadistica-dma.ulpgc.es/cursoR4ULPGC/14-seriesTemporales.html*****
