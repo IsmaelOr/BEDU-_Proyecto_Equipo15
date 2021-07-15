@@ -73,7 +73,7 @@ fecha <- unique(SmallData$date)
 n <- length(fecha)
 
 ranking <- rank.teams(anotaciones,equipos, 
-                      max.date = max(fecha), min.date = min(fecha), 
+                      max.date = (max(fecha)-1) , min.date = min(fecha), 
                       date.format = '%d/%m/%Y')
 ```
 De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de agosto del 2017 al 22 de diciembre del 2020:
