@@ -76,7 +76,7 @@ ranking <- rank.teams(anotaciones,equipos,
                       max.date = max(fecha), min.date = min(fecha), 
                       date.format = '%d/%m/%Y')
 ```
-De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de agosto del 2017 al 19 de julio del 2020:
+De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de agosto del 2017 al 22 de diciembre del 2020:
 <p align = "center">
   <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/ranking.PNG">
 </p>
