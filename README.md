@@ -1,6 +1,7 @@
 # Fase 2 - Proyecto - Equipo 15
 Repositorio de entrega de Postwork para el Proyecto del Curso de BEDU en Data Science. Equipo 15
-
+- Link al Video de Presentación: (https://youtu.be/q0j6G8pe60U)
+- Link a las Diapositivas de Presentación: (https://docs.google.com/presentation/d/1PpjG5tlNTJH6VH5f5ygX_0xIQwdQYwqoxqVheDrGfm8/edit?usp=sharing)
 
 ## 🚀 Integrantes del Equipo: 
 *  Dávila Osorio Javier Ibzan
