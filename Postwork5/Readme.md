@@ -78,7 +78,7 @@ ranking <- rank.teams(anotaciones,equipos,
 ```
 De esto obtenemos los siguientes Rankings para los partidos jugados del 18 de agosto del 2017 al 19 de julio del 2020:
 <p align = "center">
-  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/ranking.png">
+  <img src = "https://github.com/IsmaelOr/BEDU_Proyecto_Equipo15/blob/main/Imagenes/Postwork5/ranking.PNG">
 </p>
 
 #### 4. Finalmente estima las probabilidades de los eventos, el equipo de casa gana, el equipo visitante gana o el resultado es un empate para los partidos que se jugaron en la última fecha del vector de fechas `fecha`. Esto lo puedes hacer con ayuda de la función `predict` y usando como argumentos `ranking` y `fecha[n]` que deberá especificar en `date`.
