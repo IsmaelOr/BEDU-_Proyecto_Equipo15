@@ -64,7 +64,7 @@ El resultado es una lista conformada por 4 dataframes y 2 valores lógicos como 
 
 #### 3. Con ayuda de la función `unique` crea un vector de fechas (`fecha`) que no se repitan y que correspondan a las fechas en las que se jugaron partidos. Crea una variable llamada `n` que contenga el número de fechas diferentes. Posteriormente, con la función `rank.teams` y usando como argumentos los data frames `anotaciones` y `equipos`, crea un ranking de equipos usando únicamente datos desde la fecha inicial y hasta la penúltima fecha en la que se jugaron partidos, estas fechas las deberá especificar en `max.date` y `min.date`. Guarda los resultados con el nombre `ranking`.
 
-Con ayuda de la función `unique` creamos un vector de fechas , que no se repitan y que correspondan a las fechas en las que se jugaron partidos, y con `lenght` obtenemos el tamaño del vector lo que posteriormente nos ayudará al seleccionar las fechas como posiciones. 
+Usando la función `unique` creamos un vector de fechas que no se repitan de las fechas en las que se jugaron partidos, y con `lenght` obtenemos el tamaño del vector lo que posteriormente nos ayudará al seleccionar las fechas como posiciones. 
 
 Como se había comentado los datos de listaSoccer tenían el formato para usarse en `rank.teams` que crea rankings usando dataframes de los registros de partidos a través de la regresión de Poission.
 
