@@ -1069,3 +1069,6 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
+### Conclusión
+En este proyecto nos enfrentamos a varios retos, como la interpretación de los datos, o la elección de un criterio de solución. Aprendimos a documentarnos sobre las diversas funciones de R y gracias al análisis estadístico logramos obtener información relevante por lo que ya estamos listos para apostar a nuestro mejor equipo. <br/>
+Como un análisis sobre los datos que obtuvimos en el último Postwork con respecto a las gráficas de Momios, podemos ver que en el mundo de las apuestas debemos de estar dispuestos a tener altas y bajas, ya que se debe de tener un capital bastante grande para empezar a apostar y tener pasiencia ya que aproximadamente analizando la gráfica de la apuesta 300 es cuando vamos a tener puras ganancias en subida, pero antes de eso, estaremos subiendo y bajando. <br/>
